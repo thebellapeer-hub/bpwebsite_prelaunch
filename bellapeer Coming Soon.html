@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>bellapeer — bald geht's los</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="description" content="bellapeer — die Plattform, die lokales Creator-Marketing für den Lifestyle-Sektor skaliert. Bald geht's los — schreib uns an hallo@bellapeer.io." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +39,10 @@
     display: flex;
     flex-direction: column;
     padding: clamp(28px, 5vw, 56px) clamp(24px, 6vw, 80px);
+    padding-top: max(clamp(28px, 5vw, 56px), env(safe-area-inset-top));
+    padding-bottom: max(clamp(28px, 5vw, 56px), env(safe-area-inset-bottom));
+    padding-left: max(clamp(24px, 6vw, 80px), env(safe-area-inset-left));
+    padding-right: max(clamp(24px, 6vw, 80px), env(safe-area-inset-right));
     overflow: hidden;
     background: var(--violet);
   }
