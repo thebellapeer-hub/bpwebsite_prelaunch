@@ -87,7 +87,7 @@
   }
   .lead .hl { color: var(--flieder-soft); font-weight: 400; }
   .eyebrow-sec { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; color: rgba(255,255,255,0.55); margin-bottom: 38px; }
-  .section.light .eyebrow-sec { color: var(--grey-2); }
+  .section.light .eyebrow-sec { color: var(--black); }
   #zielgruppen .eyebrow-sec { margin-bottom: clamp(20px, 3vh, 32px); }
 
   /* ===================== HERO ===================== */
@@ -207,7 +207,7 @@
   /* Warum-Kopf im Referenz-Stil, linksbündig */
   .warum-head { text-align: left; margin-bottom: clamp(44px, 6vh, 84px); padding-top: clamp(60px, 12vh, 140px); }
   .warum-head .headline { text-wrap: balance; }
-  .warum-sub { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; color: var(--grey-2); margin: 0 0 38px; }
+  .warum-sub { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; color: var(--black); margin: 0 0 38px; }
 
   /* ---- Warum Creator-Marketing: stats ---- */
   .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 44px); }
@@ -269,10 +269,10 @@
 
   /* state tag */
   .pl-state { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; margin-bottom: 38px; }
-  .pl-state .sa { color: rgba(255,255,255,0.55); }
+  .pl-state .sa { color: #fff; }
   .pl-state .sb { color: var(--flieder-soft); font-weight: 400; }
   .creator-theme .pl-state .sb { color: var(--orange); }
-  .section.light .pl-state .sa { color: var(--grey-3); }
+  .section.light .pl-state .sa { color: var(--black); }
   .section.light .pl-state .sb { color: var(--orange); }
 
   /* ---- Problem/Lösung: rolling drum stats ---- */
@@ -348,7 +348,7 @@
   .seg button.creator[aria-selected="true"] { background: var(--flieder); }
   .pl-segrow { position: absolute; top: clamp(28px, 5vh, 56px); right: calc(max((100% - 1500px) / 2, 0px) + clamp(24px, 6vw, 80px)); z-index: 3; }
   .pl-segrow .seg { margin-bottom: 0; }
-  @media (max-width: 760px) { .pl-segrow { position: static; margin-bottom: 20px; } }
+  @media (max-width: 760px) { .pl-segrow { position: static; margin-bottom: 20px; padding: 0 clamp(24px, 6vw, 80px); } }
   .benefit-panel { display: none; }
   .benefit-panel.active { display: block; }
 
@@ -381,7 +381,7 @@
   @keyframes beat { 0%,100% { transform: scale(1); } 30% { transform: scale(1.18); } }
 
   /* ---- Contact modal ---- */
-  .modal-overlay { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(20,10,38,0.62); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .modal-overlay { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(20,10,38,0.62); backdrop-filter: blur(6px); }
   .modal-overlay.open { display: flex; }
   .modal {
     position: relative; width: 100%; max-width: 520px; overflow: hidden;
@@ -449,11 +449,7 @@
   .form-nav .btn-pill { margin-top: 0; }
   .form-prev { background: none; border: none; font-family: inherit; font-size: var(--fs-1); color: var(--grey-3); cursor: pointer; padding: 0; transition: color 0.3s var(--easing); }
   .form-prev:hover { color: var(--black); }
-  @media (max-width: 520px) {
-    .modal-form .btn-pill { width: 100%; justify-content: center; }
-    /* Zurück-Pfeil würde sonst den Modal-Titel überlappen */
-    .modal-back:not([hidden]) ~ .modal-step .modal-title { margin-top: 28px; }
-  }
+  @media (max-width: 520px) { .modal-form .btn-pill { width: 100%; justify-content: center; } }
 
   /* ---- Reveal (progressive enhancement) ---- */
   .reveal { transition: opacity 0.8s var(--easing), transform 0.8s var(--easing); }
@@ -462,8 +458,6 @@
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 760px) {
-    /* Sektionen sind höher als der Handy-Bildschirm — mandatory Snap würde das Scrollen blockieren */
-    html { scroll-snap-type: none; }
     .bloom { background: radial-gradient(ellipse 78% 50% at 50% 36%, #f0612b 0%, #e96019 14%, rgba(233,96,25,0.5) 34%, rgba(96,64,116,0.25) 56%, rgba(43,26,77,0) 74%); }
     .vignette { background: linear-gradient(180deg, transparent 30%, rgba(28,14,54,0.5) 100%); }
     .top { display: none; }
@@ -540,7 +534,7 @@
         <div class="why reveal">
           <div class="v"><span data-count="63">63</span>&nbsp;<span class="u">%</span></div>
           <p>vertrauen Creatorn mehr als klassischer Werbung.</p>
-          <a class="src" href="https://www.edelman.com/research/trust-barometer-special-report-in-brands-we-trust" target="_blank" rel="noopener">Edelman, 2019 ↗</a>
+          <a class="src" href="https://www.edelman.com/news-awards/only-one-third-of-consumers-trust-most-of-the-brands-they-buy" target="_blank" rel="noopener">Edelman, 2019 ↗</a>
         </div>
         <div class="why reveal">
           <div class="v"><span data-count="94">94</span>&nbsp;<span class="u">%</span></div>
@@ -1013,9 +1007,6 @@
       return ok;
     }
 
-    // Web3Forms: Zugangsschlüssel von https://web3forms.com (kostenlos, E-Mail hallo@bellapeer.io eintragen)
-    var WEB3FORMS_ACCESS_KEY = '131b4a8c-2aa7-4b47-b68f-2eb97ccb9a3a';
-
     // ---- Mehrseitiges Formular: Seiten umschalten ----
     function getPage(form) {
       var open = form.querySelector('.form-page:not([hidden])');
@@ -1082,35 +1073,10 @@
         var subject = kind === 'biz'
           ? 'Anfrage Betrieb: ' + (fd.get('betrieb') || '').toString().trim()
           : 'Creator-Anfrage: ' + (fd.get('name') || '').toString().trim();
-        var submitBtn = form.querySelector('.form-submit');
-        var err = form.querySelector('.form-error');
-        var origHtml = submitBtn.innerHTML;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Wird gesendet …';
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            access_key: WEB3FORMS_ACCESS_KEY,
-            subject: subject,
-            from_name: 'bellapeer Website',
-            email: (fd.get('email') || '').toString().trim(),
-            message: lines.join('\n')
-          })
-        }).then(function (r) { return r.json(); }).then(function (data) {
-          if (!data.success) throw new Error(data.message || 'Senden fehlgeschlagen');
-          form.reset();
-          setPage(form, 1);
-          goTo('done');
-        }).catch(function () {
-          if (err) {
-            err.textContent = 'Senden hat leider nicht geklappt. Bitte versuche es gleich noch einmal oder schreib uns direkt an hallo@bellapeer.io.';
-            err.hidden = false;
-          }
-        }).then(function () {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = origHtml;
-        });
+        window.location.href = 'mailto:hallo@bellapeer.io?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+        form.reset();
+        setPage(form, 1);
+        goTo('done');
       });
     }
     wire(document.getElementById('formBiz'), 'biz');
