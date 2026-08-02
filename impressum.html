@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>bellapeer — Impressum</title>
+<link rel="icon" type="image/png" href="assets/bildmarke_orange.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Impressum — bellapeer, München." />
+<style>
+  @font-face {
+    font-family: "DM Sans";
+    src: url("fonts/DMSans.ttf") format("truetype-variations");
+    font-weight: 100 1000; font-style: normal; font-display: swap;
+  }
+  :root {
+    --orange: #E96019;
+    --flieder: #7878b8;
+    --flieder-soft: #9d9be0;
+    --violet: #2b1a4d;
+    --violet-deep: #1f1238;
+    --offwhite: #f2f0ef;
+    --black: #0a0a0a;
+    --grey-2: #b6b3ad;
+    --grey-3: #6b6b6b;
+    --easing: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--offwhite); color: var(--black);
+    font-family: "DM Sans", system-ui, sans-serif; font-weight: 300;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  body { overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--orange); color: #fff; }
+  .o { color: var(--orange); }
+
+  .container { width: 100%; max-width: 1500px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 80px); }
+
+  .legal { padding: clamp(80px, 14vh, 180px) 0 clamp(72px, 12vh, 150px); min-height: 100vh; }
+
+  .brand { position: fixed; top: clamp(24px, 4vh, 40px); left: clamp(24px, 6vw, 80px); height: 58px; width: auto; z-index: 5; }
+  .back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 16px; color: var(--grey-3);
+    margin-bottom: clamp(34px, 5vh, 52px); transition: color 0.3s var(--easing);
+  }
+  .back:hover { color: var(--orange); }
+
+  h1.title {
+    font-weight: 300; line-height: 1.0; letter-spacing: -0.035em;
+    font-size: 60px; text-wrap: balance;
+  }
+
+  .note {
+    margin-top: clamp(26px, 3.4vh, 38px); padding: 16px 22px;
+    background: rgba(10,10,10,0.04); border: 1px solid rgba(10,10,10,0.1);
+    border-radius: 12px; font-size: clamp(13px, 1.1vw, 15px);
+    color: var(--grey-3); line-height: 1.55; max-width: 760px;
+  }
+
+  .blocks { margin-top: clamp(48px, 7vh, 80px); display: flex; flex-direction: column; gap: clamp(28px, 4vh, 40px); }
+  .block {
+    display: grid; grid-template-columns: 160px 1fr; gap: clamp(16px, 2vw, 28px);
+    align-items: start; padding-top: clamp(24px, 3vh, 34px);
+    border-top: 1px solid rgba(10,10,10,0.14);
+  }
+  .block .h {
+    font-size: 16px; font-weight: 500; letter-spacing: -0.01em;
+    color: var(--grey-3);
+  }
+  .block .c { font-size: 16px; line-height: 1.45; letter-spacing: -0.01em; color: var(--black); }
+  .block .c a { color: var(--flieder); transition: color 0.3s var(--easing); }
+  .block .c a:hover { color: var(--orange); }
+
+  @media (max-width: 720px) {
+    .block { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#2b1a4d">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2b1a4d"/>
+    <text x="600" y="440" font-family="DM Sans, sans-serif" font-size="120" font-weight="300" fill="#f2f0ef" text-anchor="middle" letter-spacing="-4">Impressum<tspan fill="#E96019">.</tspan></text>
+  </svg>
+</template>
+
+<section class="legal">
+  <div class="container">
+    <img class="brand" src="assets/bildmarke_flieder.png" alt="bellapeer" />
+    <a class="back" href="index.html">← zurück zur Startseite</a>
+    <h1 class="title">Impressum<span class="o">.</span></h1>
+
+    <div class="blocks">
+      <div class="block">
+        <div class="h">Verantwortlich</div>
+        <div class="c">Tim Tasol · Om Agrawal · Chiara Vetter</div>
+      </div>
+      <div class="block">
+        <div class="h">Anschrift</div>
+        <div class="c">Welfenstraße 23<br />81541 München</div>
+      </div>
+      <div class="block">
+        <div class="h">Kontakt</div>
+        <div class="c">E-Mail: <a href="mailto:hallo@bellapeer.io">hallo@bellapeer.io</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

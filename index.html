@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <title>bellapeer — bald geht's los</title>
+<link rel="icon" type="image/png" href="assets/bildmarke_orange.png" />
+<meta property="og:title" content="bellapeer — bald geht's los" />
+<meta property="og:description" content="Die KI-Plattform, die lokales Creator-Marketing für den Lifestyle-Sektor skaliert." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bellapeer.io/" />
+<meta property="og:image" content="https://bellapeer.io/assets/og_image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://bellapeer.io/assets/og_image.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="description" content="bellapeer — die Plattform, die lokales Creator-Marketing für den Lifestyle-Sektor skaliert. Bald geht's los — schreib uns an hallo@bellapeer.io." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,6 +97,7 @@
   .eyebrow-sec { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; color: rgba(255,255,255,0.55); margin-bottom: 38px; }
   .section.light .eyebrow-sec { color: var(--black); }
   #zielgruppen .eyebrow-sec { margin-bottom: clamp(20px, 3vh, 32px); }
+  #tech .eyebrow-sec { color: #fff; }
 
   /* ===================== HERO ===================== */
   .stage {
@@ -155,6 +164,7 @@
     filter: drop-shadow(0 12px 40px rgba(0,0,0,0.42));
   }
   .core .lead { margin-top: 0; text-shadow: 0 1px 18px rgba(20,10,38,0.45); }
+  .lead-sub { margin-top: clamp(14px, 2vh, 22px); font-size: var(--fs-1); line-height: 1.55; color: rgba(255,255,255,0.7); max-width: 56ch; text-shadow: 0 1px 18px rgba(20,10,38,0.45); }
   .contact { margin-top: clamp(30px, 4vh, 46px); display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
   .contact .label { font-size: var(--fs-2); color: rgba(255,255,255,0.85); }
   .bottom { position: relative; z-index: 2; display: flex; justify-content: center; }
@@ -246,11 +256,11 @@
     will-change: transform, opacity;
   }
   .pl-bg.biz {
-    background: radial-gradient(ellipse 46% 52% at 26% 42%, rgba(240,97,43,0.55) 0%, rgba(240,97,43,0.2) 45%, rgba(60,45,107,0) 70%);
+    background: radial-gradient(ellipse 46% 52% at 26% 42%, rgba(240,97,43,0.75) 0%, rgba(240,97,43,0.6) 32%, rgba(240,97,43,0.18) 52%, rgba(60,45,107,0) 70%);
     opacity: 1; transform: translateX(0);
   }
   .pl-bg.creator {
-    background: radial-gradient(ellipse 46% 52% at 74% 48%, rgba(240,97,43,0.55) 0%, rgba(240,97,43,0.2) 45%, rgba(60,45,107,0) 72%);
+    background: radial-gradient(ellipse 46% 52% at 74% 48%, rgba(240,97,43,0.75) 0%, rgba(240,97,43,0.6) 32%, rgba(240,97,43,0.18) 52%, rgba(60,45,107,0) 72%);
     opacity: 0; transform: translateX(24%) scale(1.08);
   }
   #zielgruppen[data-theme="creator"] .pl-bg.biz { opacity: 0; transform: translateX(-24%) scale(1.08); }
@@ -327,9 +337,20 @@
   .step { padding-top: clamp(18px, 2vh, 26px); }
   .step h3 { font-weight: 300; font-size: var(--fs-4); line-height: 1.05; letter-spacing: -0.035em; color: var(--orange-bright); margin: 0; }
   .step .n { font-weight: 300; font-size: var(--fs-1); letter-spacing: 0.02em; color: rgba(255,255,255,0.5); margin: 10px 0 14px; }
-  .step p { font-size: var(--fs-1); line-height: 1.5; color: rgba(255,255,255,0.72); }
+  .step p { font-size: var(--fs-1); line-height: 1.5; color: rgba(255,255,255,0.72); text-align: justify; hyphens: auto; }
   .steps-note { margin-top: clamp(36px, 5vh, 64px); font-size: var(--fs-1); color: rgba(255,255,255,0.72); max-width: 60ch; }
   .steps-note .hl { color: #fff; font-weight: 400; }
+
+  /* ---- Technologie ---- */
+  #tech .tech-intro { font-size: var(--fs-1); line-height: 1.55; color: rgba(255,255,255,0.72); max-width: none; margin-top: clamp(-40px, -4vh, -24px); margin-bottom: clamp(44px, 6vh, 84px); }
+  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 44px); }
+  .tech-item { padding-top: clamp(18px, 2vh, 26px); }
+  .tech-item h3 { font-weight: 300; font-size: var(--fs-4); line-height: 1.05; letter-spacing: -0.035em; color: var(--orange-bright); margin: 0 0 14px; }
+  .tech-item p { font-size: var(--fs-1); line-height: 1.5; color: rgba(255,255,255,0.72); max-width: 48ch; }
+  #tech .steps-note { max-width: none; }
+  #tech { position: relative; overflow: hidden; background: linear-gradient(rgba(31,18,56,0.28), rgba(31,18,56,0.28)), url("assets/tech_hintergrund.png") center / cover no-repeat, var(--violet-deep); }
+  #tech > .container { position: relative; z-index: 1; }
+  @media (max-width: 720px) { .tech-grid { grid-template-columns: 1fr; gap: clamp(22px, 4vh, 30px); } }
 
   /* ---- Toggle ---- */
   .seg {
@@ -357,7 +378,9 @@
     position: relative; overflow: hidden; z-index: 2;
     scroll-snap-align: start; scroll-snap-stop: always;
     padding: clamp(56px, 9vh, 110px) 0;
-    background: url("assets/bellapeer_Hintergrund_4.png") center / cover no-repeat, #2e1d54;
+    border-top: calc(clamp(140px, 26vh, 300px) + 45px) solid var(--offwhite);
+    border-bottom: clamp(80px, 14vh, 160px) solid var(--offwhite);
+    background: url("assets/finale_hintergrund_2.png") center / cover no-repeat, #2e1d54;
   }
   .finale .display { margin-bottom: clamp(16px, 2.4vh, 24px); }
 
@@ -509,7 +532,8 @@
       <div class="core">
         <h1 class="hero-h reveal" style="font-size: var(--fs-3)"><span class="soft">Bald geht's los</span><span class="o">.</span></h1>
         <img class="logo reveal" src="assets/logo_offwhite_trim.png" alt="bellapeer" />
-        <p class="lead reveal" style="font-size: var(--fs-2)">Die Plattform, die <span class="hl">lokales Creator-Marketing</span> für den Lifestyle-Sektor skaliert<span class="o">.</span></p>
+        <p class="lead reveal" style="font-size: var(--fs-2)">Die KI-Plattform, die <span class="hl">lokales Creator-Marketing</span> für den Lifestyle-Sektor skaliert<span class="o">.</span></p>
+        <p class="lead-sub reveal" style="font-size: var(--fs-1)">Unsere KI erstellt das Briefing, findet Creator mit echter lokaler Reichweite und prüft jeden Beitrag – automatisch, ohne Agentur.</p>
         <div class="contact reveal">
           <span class="label" style="font-size: var(--fs-2)">Fragen, Ideen oder einfach Hallo sagen<span class="o">?</span></span>
           <a class="btn-pill" href="mailto:hallo@bellapeer.io" style="font-size: var(--fs-1)">hallo@bellapeer.io <span class="arrow">→</span></a>
@@ -614,9 +638,9 @@
           </div>
           <div class="fs-desc">
             <span class="swap">
-              <span class="sp">nur die Briefing-Vorlage auswählen</span>
+              <span class="sp">Angebot eingeben – das Briefing erstellt die KI</span>
               <span class="sa">bis eine Kampagne wirkt</span>
-              <span class="sb">nur die Briefing-Vorlage auswählen</span>
+              <span class="sb">Angebot eingeben – das Briefing erstellt die KI</span>
             </span>
           </div>
           <span class="swap">
@@ -762,17 +786,17 @@
           <div class="step reveal">
             <h3>Starten</h3>
             <div class="n">01</div>
-            <p>Füge dein Angebot hinzu und beschreibe kurz dein Ziel. Unsere KI erstellt daraus ein passendes Kampagnen-Briefing und spielt es an passende Creator aus – ganz ohne Agentur.</p>
+            <p>Füge dein Angebot hinzu und beschreibe kurz dein Ziel – mehr brauchst du nicht. Unsere KI erstellt daraus in Minuten ein fertiges Kampagnen-Briefing und spielt es an passende Creator aus, ganz ohne Agentur.</p>
           </div>
           <div class="step reveal">
             <h3>Teilen</h3>
             <div class="n">02</div>
-            <p>Geprüfte Creator nehmen deine Einladung an und produzieren authentischen Content – Stories, Reels, TikToks –, den du flexibel auf deinen Kanälen einsetzen kannst.</p>
+            <p>bellapeer schlägt dir geprüfte Creator vor – der Local-Reach-Score zählt lokale Reichweite und Passung statt Follower-Zahl. Sie produzieren authentische Stories, Reels und TikToks – frei nutzbar für deine Kanäle.</p>
           </div>
           <div class="step reveal">
             <h3>Wachsen</h3>
             <div class="n">03</div>
-            <p>Verfolge in der App, wie viele Menschen du erreichst, wie oft dein Angebot geklickt wird und welche Inhalte neue Gäste oder Umsatz bringen. Erfolgreiche Beiträge kannst du erneut nutzen, um weiter zu wachsen.</p>
+            <p>bellapeer prüft jeden veröffentlichten Beitrag automatisch auf dein Briefing – erst dann wird abgerechnet. In der App siehst du Reichweite, Klicks und welche Beiträge Gäste und Umsatz bringen.</p>
           </div>
         </div>
         <p class="howto-intro">5 Minuten Aufwand für dich – den Rest, von der Creator-Suche bis zum Ergebnis, übernehmen wir<span class="o">.</span></p>
@@ -783,22 +807,48 @@
           <div class="step">
             <h3>Entdecken</h3>
             <div class="n">01</div>
-            <p>Finde passende Angebote geprüfter Lifestyle-Betriebe in deiner Nähe und buche dein Erlebnis mit nur einem Klick in der App.</p>
+            <p>Finde Angebote geprüfter Lifestyle-Betriebe in deiner Nähe und buche mit einem Klick in der App. Deine lokale Reichweite zählt, nicht die Follower-Zahl – so haben auch kleinere Creator faire Chancen.</p>
           </div>
           <div class="step">
             <h3>Genießen</h3>
             <div class="n">02</div>
-            <p>Erlebe dein Angebot vor Ort, ohne dafür zu zahlen, und halte den Moment als Story oder Reel fest – so, wie du es ohnehin posten würdest.</p>
+            <p>Erlebe dein Angebot vor Ort, ohne dafür zu zahlen – du aktivierst den Deal beim Besuch einfach in der App. Halte den Moment als Story oder Reel fest, so wie du es ohnehin posten würdest.</p>
           </div>
           <div class="step">
             <h3>Posten</h3>
             <div class="n">03</div>
-            <p>Veröffentliche deinen Content nach dem Kampagnen-Briefing, markiere die Location – fertig. Wiederhole es, wann immer du möchtest.</p>
+            <p>Veröffentliche deinen Content nach dem Kampagnen-Briefing und markiere die Location – bellapeer erkennt deinen Beitrag automatisch – ohne Nachweis. Wiederhole es, wann immer du möchtest.</p>
           </div>
         </div>
         <p class="howto-intro">Du entdeckst ein Angebot in deiner Nähe, erlebst es – neuer Content für deine Kanäle entsteht ganz nebenbei<span class="o">.</span></p>
       </div>
       </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIE (dark) -->
+  <section class="section" id="tech" data-screen-label="Technologie">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow-sec reveal">Die Technologie hinter <img class="bp-inline" src="assets/logo_orange_trim.png" alt="bellapeer" /><span class="o">.</span></p>
+        <h2 class="headline reveal"><span class="soft">Keine Agentur, sondern eine KI-Plattform</span><span class="o">.</span></h2>
+      </div>
+      <p class="tech-intro reveal">Unsere Technologie übernimmt die Arbeit, die Creator-Marketing bisher teuer und langsam gemacht hat.</p>
+      <div class="tech-grid">
+        <div class="tech-item reveal">
+          <h3>KI-Briefing</h3>
+          <p>Aus Angebot und Ziel erstellt unsere KI in Minuten das fertige Kampagnen-Briefing.</p>
+        </div>
+        <div class="tech-item reveal">
+          <h3>Local Reach</h3>
+          <p>Unser Local-Reach-Score misst, wie viele Menschen ein Creator wirklich in deiner Umgebung erreicht.</p>
+        </div>
+        <div class="tech-item reveal">
+          <h3>KI-Prüfung</h3>
+          <p>Jedes Creator-Profil wird vor dem Deal geprüft – und jeder Beitrag nach der Veröffentlichung.</p>
+        </div>
+      </div>
+      <p class="steps-note reveal">Jeder abgeschlossene Deal macht <span class="hl">bellapeer besser</span> – mehr Daten, passendere Matches<span class="o">.</span></p>
     </div>
   </section>
 
@@ -819,7 +869,7 @@
       <nav class="footer-links">
         <a href="#" data-contact>Kontakt</a>
         <a href="https://www.instagram.com/bellapeer.io" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" aria-disabled="true">TikTok</a>
+        <a href="https://www.tiktok.com/@bellapeer.io" target="_blank" rel="noopener">TikTok</a>
         <a href="https://www.linkedin.com/company/bellapeer" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
@@ -828,7 +878,7 @@
       <span class="sep">·</span>
       <span>Mit <span class="heart">♥</span> aus München</span>
       <span class="sep">·</span>
-      <a href="Impressum.html">Impressum</a>
+      <a href="impressum.html">Impressum</a>
     </div>
   </div>
 </footer>
