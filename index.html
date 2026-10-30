@@ -1,1311 +1,764 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<title>bellapeer</title>
-<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon_orange.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon_192.png" />
-<link rel="apple-touch-icon" href="assets/favicon_192.png" />
-<meta property="og:title" content="bellapeer" />
-<meta property="og:description" content="Die KI-Plattform, die lokales Creator-Marketing für den Lifestyle-Sektor skaliert." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bellapeer.io/" />
-<meta property="og:image" content="https://bellapeer.io/assets/og_image_1200.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://bellapeer.io/assets/og_image_1200.png" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="description" content="bellapeer — die KI-Plattform, die lokales Creator-Marketing für den Lifestyle-Sektor skaliert." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>bellapeer 2.0 · Neu gedacht, Start Q1/2027</title>
+<meta name="description" content="bellapeer 2.0: Das frühere Konzept für Gastro und lokale Betriebe ist eingestellt. Wir arbeiten an etwas Neuem, Veröffentlichung Q1/2027.">
+<link rel="canonical" href="https://bellapeer.io/">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:site_name" content="bellapeer">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="bellapeer">
+<meta property="og:description" content="Something new is coming to DACH.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bellapeer.io/">
+<meta property="og:image" content="https://bellapeer.io/assets/og_image_1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="bellapeer · The best ads have names.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [
+ {"@type": "Organization", "@id": "https://bellapeer.io/#organisation", "name": "bellapeer", "alternateName": ["bellapeer 2.0", "bella peer"],
+  "url": "https://bellapeer.io/", "logo": "https://bellapeer.io/assets/favicon_192.png",
+  "description": "bellapeer 2.0 aus München. Das frühere Konzept für Gastro und lokale Betriebe (bellapeer 1.0) ist eingestellt; wir arbeiten an etwas Neuem, Veröffentlichung Q1/2027.",
+  "subjectOf": {"@id": "https://bellapeer.io/update#seite"},
+  "email": "hallo@bellapeer.io",
+  "address": {"@type": "PostalAddress", "addressLocality": "München", "postalCode": "81669", "addressCountry": "DE"},
+  "sameAs": ["https://www.linkedin.com/company/bellapeer", "https://www.instagram.com/bellapeer.io", "https://www.tiktok.com/@bellapeer.io"]},
+ {"@type": "WebSite", "@id": "https://bellapeer.io/#website", "name": "bellapeer", "url": "https://bellapeer.io/", "inLanguage": "de",
+  "publisher": {"@id": "https://bellapeer.io/#organisation"}}
+]}
+</script>
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon_48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon_192.png">
+<link rel="apple-touch-icon" href="assets/favicon_192.png">
+<link rel="preload" href="assets/hero_nah_klein.jpg" as="image" media="(max-width: 760px) and (max-height: 1000px)">
+<link rel="preload" href="assets/hero_nah.jpg" as="image" media="(min-width: 761px), (min-height: 1001px)">
+<link rel="preload" href="assets/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<noscript><style>html,body{overflow:auto!important;height:auto!important}.feld,.leiste{position:static!important}.klapp{visibility:visible!important;position:static!important;transform:none!important;max-height:none!important;width:auto!important}.start{display:none}</style></noscript>
 <style>
-  :root {
-    --orange: #E96019;
-    --orange-bright: #f0612b;
-    --black: #0a0a0a;
-    --white: #ffffff;
-    --offwhite: #f2f0ef;
-    --grey-2: #b6b3ad;
-    --grey-3: #6b6b6b;
-    --grey-line: #e2ded6;
-    --flieder: #7878b8;
-    --flieder-soft: #9d9be0;
-    --violet: #2b1a4d;
-    --violet-deep: #1f1238;
-    /* Typo-Skala: 4 Größen auf 1.3er-Raster (16 · 1.3^n): 16 / 27 / 59 / 77 */
-    --fs-1: 16px;
-    --fs-2: clamp(20px, 1.9vw, 27px);
-    --fs-3: clamp(38px, 4.2vw, 59px);
-    --fs-4: clamp(46px, 4.6vw, 77px);
-    --easing: cubic-bezier(0.22, 1, 0.36, 1);
-    --smooth: cubic-bezier(0.37, 0, 0.63, 1);
+  @font-face { font-family: Outfit; src: url('assets/fonts/Outfit.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: Fraunces; src: url('assets/fonts/Fraunces.woff2') format('woff2'); font-weight: 100 900; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; overflow: hidden; background: #fff; color: #1f1f1f; font: 400 15px Outfit, sans-serif; overscroll-behavior: none; }
+  html { touch-action: manipulation; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  .feld { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  .leiste { position: fixed; left: 0; right: 0; height: 44px; z-index: 10; background: #fff;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 28px; color: #b0b0b0; font-size: 19.5px; }
+  .oben { top: 0; } .unten { bottom: 0; }
+  .leiste button { align-self: stretch; }
+  .feld { position: fixed; top: 44px; bottom: 44px; left: 0; right: 0; overflow: hidden; }
+  .feld canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  #grund { transform: scale(1.03); animation: atmen 9s ease-in-out infinite alternate; }
+  @keyframes atmen { from { transform: scale(1.03) translateY(0); } to { transform: scale(1.045) translateY(-0.9%); } }
+  .flimmern { position: absolute; inset: -50%; pointer-events: none; opacity: .5; mix-blend-mode: overlay;
+    animation: flimmern 1s steps(8) infinite; }
+  @keyframes flimmern {
+    0% { transform: translate(0, 0); } 12% { transform: translate(-7%, 4%); } 25% { transform: translate(5%, -6%); }
+    37% { transform: translate(-3%, -9%); } 50% { transform: translate(8%, 3%); } 62% { transform: translate(-6%, 7%); }
+    75% { transform: translate(3%, 9%); } 87% { transform: translate(-9%, -2%); } 100% { transform: translate(0, 0); }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
-  html, body {
-    background: var(--violet);
-    color: var(--white);
-    font-family: "Outfit", system-ui, sans-serif;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  /* oben links: unser Spruch in der Ausdrucksschrift */
+  .spruch { font-family: Fraunces, Georgia, serif; font-weight: 400; font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    font-size: 22px; letter-spacing: -.005em; color: #1f1f1f; white-space: nowrap; }
+  /* Ecken: Knopf in der Leiste, Feld klappt aus der Ecke auf */
+  .ecke { font: inherit; color: #1f1f1f; background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: .45em; white-space: nowrap; }
+  .ecke .pfeil { display: inline-block; transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+  .ecke[aria-expanded="true"] .pfeil { transform: rotate(180deg); }
+  .ecke:focus-visible { color: #ff4814; }
+  .klapp { overscroll-behavior: contain; position: fixed; z-index: 8; background: #fff; padding: clamp(22px, 3vw, 44px) 28px; visibility: hidden; overflow-y: auto;
+    transition: transform .6s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .6s; }
+  .klapp:focus { outline: none; }
+  .klapp { background: linear-gradient(rgba(255, 255, 255, 0), #fff 60%) 0 100% / 100% 28px no-repeat local,
+    linear-gradient(rgba(31, 31, 31, 0), rgba(31, 31, 31, .1)) 0 100% / 100% 14px no-repeat scroll, #fff; }
+  .klapp.offen { visibility: visible; transform: none !important; transition: transform .6s cubic-bezier(.22, 1, .36, 1), visibility 0s; }
+  #worum { top: 44px; left: 0; right: 0; min-height: min(44vh, 460px); transform: translateY(-101%);
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 4vw, 64px); align-items: end; }
+  .gross { font-family: Fraunces, Georgia, serif; font-weight: 400; font-variation-settings: 'SOFT' 100, 'WONK' 1;
+    font-size: clamp(40px, 6.4vw, 104px); line-height: .98; letter-spacing: -.015em; text-wrap: balance; margin: 0 0 0 -.03em; }
+  /* Feld oben rechts: zwei Gruppen – Text (schwarz, eng) und Route (grau, eng); Gruppen mit klarem Abstand.
+     Die letzte Zeile rechts (Ziel) steht auf derselben Grundlinie wie die letzte Zeile der Überschrift. */
+  #worum { align-items: last baseline; align-content: end; align-content: safe end; max-height: calc(100vh - 44px - 140px); max-height: calc(100% - 184px); }
+  .text { font-size: clamp(16px, 1.25vw, 19px); line-height: 1.4; max-width: 34em; margin: 0; text-wrap: pretty; }
+  .text + .text { margin-top: .3em; }
+  .text.bald { margin-top: 26px; }                               /* gleicher Abstand nach oben und unten */
+  .klein { font-size: 14px; color: #6b6b6b; margin: 0; letter-spacing: .01em; line-height: 1.4; }
+  .route { margin-top: 26px; }
+  .ziel { margin-top: .45em; }
+  .europa, .muenchen { display: inline-block; width: 1.3em; height: 1.3em; vertical-align: -.3em; margin-right: .6em; overflow: visible; }
+  .muenchen path { fill: none; stroke: #6b6b6b; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 100; stroke-dashoffset: 100; }
+  .offen .muenchen path { animation: zeichnen 1.3s cubic-bezier(.45, 0, .25, 1) .4s forwards; }
+  @keyframes zeichnen {
+    0% { stroke-dashoffset: 100; stroke: #ff4814; } 40% { stroke: #ff4814; opacity: 1; } 50% { stroke: #ff4814; opacity: .45; }
+    60% { stroke: #6ea0fa; opacity: 1; } 70% { opacity: .55; } 78% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; stroke: #6b6b6b; opacity: 1; }
   }
-  body { overflow-x: hidden; }
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
-  ::selection { background: var(--orange); color: var(--white); }
-
-  .container { width: 100%; max-width: 1500px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 80px); }
-
-  /* ---- Pill button ---- */
-  .btn-pill {
-    display: inline-flex; align-items: center; gap: 8px;
-    height: clamp(34px, 2.6vw, 40px); padding: 0 18px;
-    border-radius: 999px;
-    background: var(--white); color: var(--black);
-    font-weight: 500; font-size: var(--fs-1);
-    border: 1px solid var(--white);
-    transition: transform 0.4s var(--easing), background 0.3s var(--easing), border-color 0.3s var(--easing), color 0.3s var(--easing);
+  .stern { fill: #6b6b6b; transform-box: fill-box; transform-origin: center; opacity: 0; transform: rotate(-200deg) scale(.2); }
+  .offen .stern { animation: stern-rein .55s cubic-bezier(.22, 1, .36, 1) forwards; animation-delay: calc(.4s + var(--i) * 32ms); }
+  /* jeder Stern dreht sich ein und flackert kurz in Orange und Blau auf, dann grau */
+  @keyframes stern-rein {
+    0% { opacity: 0; transform: rotate(-160deg) scale(.3); fill: #ff4814; }
+    35% { opacity: 1; transform: none; fill: #ff4814; }
+    45% { opacity: .35; fill: #ff4814; }
+    55% { opacity: 1; fill: #6ea0fa; }
+    65% { opacity: .5; fill: #6ea0fa; }
+    100% { opacity: 1; transform: none; fill: #6b6b6b; }
   }
-  .btn-pill .arrow { transition: transform 0.4s var(--easing); }
-  .btn-pill:hover { transform: translateY(-2px); background: var(--flieder); border-color: var(--flieder); color: var(--white); }
-  .btn-pill:hover .arrow { transform: translateX(4px); }
-  .btn-pill.dark { background: var(--black); border-color: var(--black); color: var(--white); }
-  .btn-pill.dark:hover { background: var(--flieder); border-color: var(--flieder); color: var(--white); }
-  .btn-pill.knockout { background: #fff; border-color: #fff; color: #000; mix-blend-mode: screen; }
-  .btn-pill.knockout:hover { background: #fff; border-color: #fff; color: #000; }
-  /* Durchsichtige Pills: transparent, bei Hover lila */
-  .btn-pill.ghost { background: transparent; border-color: rgba(10,10,10,0.4); color: var(--black); }
-  .btn-pill.ghost:hover { background: var(--flieder); border-color: var(--flieder); color: var(--white); }
-  .btn-pill.ghost-light { background: transparent; border-color: rgba(255,255,255,0.65); color: var(--white); }
-  .btn-pill.ghost-light:hover { background: var(--flieder); border-color: var(--flieder); color: var(--white); }
-
-  /* ---- Type ---- */
-  .display {
-    font-weight: 300; line-height: 1.0; letter-spacing: -0.035em;
-    font-size: var(--fs-3); text-wrap: balance;
+  #marke { opacity: 0; transform-origin: 0 0; transition: opacity .4s; }
+  #funken { pointer-events: none; mix-blend-mode: screen; transform-origin: 0 0; }
+  .spruch { cursor: pointer; background: none; border: 0; padding: 0; transition: color .3s; }
+  .spruch:focus-visible { color: #ff4814; }
+  /* unten links: Feld klappt von unten auf, linke Hälfte */
+  #dabei { bottom: 44px; left: 0; width: 50%; transform: translateY(101%); display: flex; flex-direction: column; justify-content: safe flex-end;
+    max-height: calc(100vh - 88px - 40px); max-height: calc(100% - 128px); }
+  .dabei-titel { font-size: clamp(36px, 4.6vw, 76px); margin-bottom: .35em; }
+  #dabei .text + .text { margin-top: .3em; }
+  #dabei .text { text-wrap: pretty; }
+  .start { margin-top: 1.1em; }
+  .countdown { font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+  /* beim Aufklappen leuchtet nur die Mail ruhig in Orange und Blau auf, dann wieder schwarz */
+  #dabei.offen .mail { animation: flackern 1.9s ease-in-out .45s both; }
+  @keyframes flackern {
+    0% { color: #ff4814; } 30% { color: #ff4814; opacity: 1; } 42% { color: #ff4814; opacity: .7; }
+    55% { color: #6ea0fa; opacity: 1; } 68% { color: #6ea0fa; opacity: .8; } 100% { opacity: 1; }
   }
-  .headline {
-    font-weight: 300; line-height: 1.04; letter-spacing: -0.03em;
-    font-size: var(--fs-3); text-wrap: balance;
+  .mail-zeile { margin-top: .9em !important; }
+  .mail { color: #1f1f1f; text-decoration: none; border-bottom: 1.5px solid currentColor; transition: color .3s; }
+  .mail:focus-visible { color: #ff4814; }
+  .kanaele { display: flex; gap: 1.4em; margin-top: 1.1em; }
+  .kanaele a { color: #6b6b6b; text-decoration: none; transition: color .3s; }
+  .kanaele a:focus-visible { color: #ff4814; }
+  /* unten rechts: Impressum und Datenschutz, rechte Hälfte, neutral */
+  #rechtliches { bottom: 44px; right: 0; width: 50%; transform: translateY(101%); display: flex; flex-direction: column;
+    justify-content: safe flex-end; max-height: calc(100vh - 88px - 40px); max-height: calc(100% - 128px); }
+  .recht-titel { font-size: clamp(30px, 3vw, 46px); margin-bottom: .7em; }
+  .nb { white-space: nowrap; }
+  .recht-fuss { font-size: 12px; color: #6b6b6b; margin: 1.3em 0 0; }
+  .angaben { display: grid; grid-template-columns: 8.5em 1fr; gap: .45em 1.2em; margin: 0; font-size: 15px; line-height: 1.4; }
+  .angaben dt { color: #6b6b6b; } .angaben dd { margin: 0; }
+  .angaben a { color: #1f1f1f; text-decoration: none; border-bottom: 1px solid currentColor; transition: color .3s; }
+  .angaben a:focus-visible { color: #ff4814; }
+  .recht-unter { font: 400 15px/1.4 Outfit, sans-serif; margin: 2.2em 0 .55em; }
+  @media (max-height: 760px) and (min-width: 761px) { .recht-titel { margin-bottom: .35em; } .recht-unter { margin-top: 1.2em; } .recht-fuss { margin-top: .6em; } .recht { line-height: 1.4; } }
+  .recht { font-size: 13px; line-height: 1.5; color: #6b6b6b; margin: 0; max-width: 46em; text-wrap: pretty; }
+  @media (max-width: 1100px) { .recht { font-size: 12.5px; line-height: 1.45; } }
+  .recht + .recht { margin-top: .6em; }
+  .recht a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  @media (max-width: 760px) { .klapp { padding-left: 16px; padding-right: 16px; } .angaben { grid-template-columns: 5.6em 1fr; gap: .45em .9em; } .leiste { padding: 0 16px; } #worum { grid-template-columns: 1fr; align-items: start; min-height: 0; } #dabei, #rechtliches { width: 100%; } .leiste { font-size: 14px; gap: 10px; } .spruch { font-size: 15px; } .ecke { gap: .3em; } }
+  .ecke .kurz { display: none; }
+  @media (max-width: 389px) { .ecke .voll { display: none; } .ecke .kurz { display: inline; } }
+  @media (max-width: 370px) { .leiste { font-size: 13px; } .spruch { font-size: 13.5px; } .ecke .lang { display: none; } }
+  @media (max-width: 340px) { .klein { letter-spacing: 0; } }
+  @media (max-width: 389px) { .recht-fuss .trenn { display: none; } .recht-fuss .nb { display: block; } }
+  @media (max-height: 480px) {
+    .klapp { padding-top: 14px; padding-bottom: 14px; }
+    .gross { font-size: 30px; } .dabei-titel, .recht-titel { font-size: 26px; margin-bottom: .35em; }
+    .route, .text.bald { margin-top: 12px; } .recht-unter { margin-top: 1.2em; }
   }
-  .display .soft, .headline .soft { color: rgba(255,255,255,0.5); }
-  .o { color: var(--orange); }
-  .lead {
-    font-size: var(--fs-2); line-height: 1.45;
-    letter-spacing: -0.01em; color: rgba(255,255,255,0.82); max-width: 620px;
+  /* Inhalt unten im Feld; ist er höher als das Feld, beginnt er oben und bleibt scrollbar, auch in älteren Browsern */
+  #dabei > :first-child, #rechtliches > :first-child { margin-top: auto; }
+  /* Handy quer und sehr niedrige Fenster: Felder nutzen fast die ganze Höhe, die Route bleibt sichtbar */
+  @media (max-height: 480px) {
+    #worum, #dabei, #rechtliches { max-height: calc(100vh - 104px); max-height: calc(100% - 104px); }
+    .text { line-height: 1.3; } .start, .kanaele { margin-top: .6em; } .mail-zeile { margin-top: .6em !important; }
   }
-  .lead .hl { color: var(--flieder-soft); font-weight: 400; }
-  .eyebrow-sec { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; color: rgba(255,255,255,0.55); margin-bottom: 38px; }
-  .section.light .eyebrow-sec { color: var(--black); }
-  #zielgruppen .eyebrow-sec { margin-bottom: clamp(20px, 3vh, 32px); }
-  #tech .eyebrow-sec { color: #fff; }
-
-  /* ===================== HERO ===================== */
-  .stage {
-    position: relative; min-height: 100vh; min-height: 100svh;
-    scroll-snap-align: start; scroll-snap-stop: always;
-    display: flex; flex-direction: column;
-    padding: clamp(28px, 5vw, 56px) 0;
-    overflow: hidden; background: var(--violet);
+  @media (max-height: 480px) and (min-width: 640px) { #worum { grid-template-columns: 1.4fr 1fr; align-items: end; align-items: last baseline; } }
+  /* niedrige Laptop-Fenster: Impressum breiter und mit weniger Rand, damit es ohne Scrollen passt */
+  @media (max-height: 760px) and (min-height: 481px) and (min-width: 761px) {
+    #rechtliches { width: 62%; max-height: calc(100vh - 104px); max-height: calc(100% - 104px); }
+    .klapp { padding-top: 18px; padding-bottom: 18px; }
   }
-  .stage > .container { display: flex; flex-direction: column; flex: 1; }
-  .bloom {
-    position: absolute; top: -40%; left: -40%; width: 180%; height: 180%;
-    pointer-events: none; z-index: 0;
-    background: radial-gradient(ellipse 40% 56% at 50% 50%,
-      #f0612b 0%, #e96019 13%, rgba(233,96,25,0.55) 30%, rgba(96,64,116,0.26) 50%, rgba(43,26,77,0) 68%);
-    transform-origin: 50% 50%; animation: twirl 12s linear infinite; will-change: transform;
+  /* übliche Laptop-Fenster mit Browserleiste (z. B. 1440 x 789): Impressum mit weniger Rand, damit es ganz passt */
+  @media (max-height: 860px) and (min-height: 761px) and (min-width: 761px) {
+    #rechtliches { max-height: calc(100vh - 104px); max-height: calc(100% - 104px); padding-top: 18px; padding-bottom: 18px; }
   }
-  @keyframes twirl {
-    0% { transform: rotate(0deg) translate(11%, 5%) scale(1); }
-    50% { transform: rotate(180deg) translate(11%, 5%) scale(1.12); }
-    100% { transform: rotate(360deg) translate(11%, 5%) scale(1); }
-  }
-  .bloom2 {
-    position: absolute; z-index: 0; pointer-events: none;
-    top: 52%; left: 40%; width: 50vw; height: 50vw; max-width: 760px; max-height: 760px;
-    margin: -25vw 0 0 -25vw;
-    background: radial-gradient(circle at 50% 50%,
-      rgba(240,97,43,0.7) 0%, rgba(233,96,25,0.32) 34%, rgba(120,120,184,0.12) 58%, rgba(43,26,77,0) 72%);
-    filter: blur(10px); animation: swim1 10s linear infinite; will-change: transform;
-  }
-  @keyframes swim1 {
-    0% { transform: translate(-26%, -8%) scale(1); }
-    25% { transform: translate(8%, -26%) scale(1.12); }
-    50% { transform: translate(30%, 2%) scale(1); }
-    75% { transform: translate(6%, 24%) scale(1.14); }
-    100% { transform: translate(-26%, -8%) scale(1); }
-  }
-  .bloom3 {
-    position: absolute; z-index: 0; pointer-events: none;
-    top: 38%; left: 62%; width: 56vw; height: 56vw; max-width: 820px; max-height: 820px;
-    margin: -28vw 0 0 -28vw;
-    background: radial-gradient(circle at 50% 50%,
-      rgba(120,120,184,0.5) 0%, rgba(120,120,184,0.2) 40%, rgba(43,26,77,0) 70%);
-    filter: blur(22px); animation: swim2 14s linear infinite; will-change: transform;
-  }
-  @keyframes swim2 {
-    0% { transform: translate(24%, 6%) scale(1); }
-    33% { transform: translate(-10%, 24%) scale(1.16); }
-    66% { transform: translate(-22%, -14%) scale(0.9); }
-    100% { transform: translate(24%, 6%) scale(1); }
-  }
-  .vignette {
-    position: absolute; inset: 0; pointer-events: none; z-index: 1;
-    background: linear-gradient(90deg, transparent 30%, rgba(40,22,72,0.32) 66%, rgba(28,14,54,0.7) 100%);
-  }
-  .top { position: relative; z-index: 2; min-height: 1px; display: flex; align-items: center; justify-content: flex-end; }
-  .eyebrow-tag { font-size: var(--fs-1); letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.8); font-weight: 500; white-space: nowrap; }
-  .core { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 940px; padding: clamp(28px, 5vh, 64px) 0; }
-  h1.hero-h { font-weight: 300; font-size: var(--fs-3); line-height: 1.0; letter-spacing: -0.035em; text-wrap: balance; }
-  h1.hero-h .soft { color: rgba(255,255,255,0.55); }
-  .core .logo {
-    width: clamp(340px, 52vw, 740px); height: auto; aspect-ratio: 1486 / 397; object-fit: contain; object-position: left center;
-    margin: clamp(10px, 2vh, 24px) 0 clamp(20px, 2.6vh, 34px) 0;
-    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.42));
-  }
-  .core .lead { margin-top: 0; text-shadow: 0 1px 18px rgba(20,10,38,0.45); }
-  .lead-sub { margin-top: clamp(14px, 2vh, 22px); font-size: var(--fs-1); line-height: 1.55; color: rgba(255,255,255,0.7); max-width: 56ch; text-shadow: 0 1px 18px rgba(20,10,38,0.45); }
-  .contact { margin-top: clamp(30px, 4vh, 46px); display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
-  .contact .label { font-size: var(--fs-2); color: rgba(255,255,255,0.85); }
-  .bottom { position: relative; z-index: 2; display: flex; justify-content: center; }
-  .scroll-cue { display: inline-flex; align-items: center; gap: 10px; font-size: var(--fs-2); color: rgba(255,255,255,0.72); transition: color 0.3s var(--easing); }
-  .scroll-cue:hover { color: #fff; }
-  .scroll-cue .cue { color: var(--orange); animation: bob 1.8s var(--easing) infinite; }
-  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
-
-  /* ===================== SECTION SCAFFOLD ===================== */
-  .section {
-    position: relative; z-index: 2; padding: clamp(64px, 8vh, 120px) 0;
-    min-height: 100vh; min-height: 100svh;
-    display: flex; flex-direction: column; justify-content: center;
-    scroll-snap-align: start; scroll-snap-stop: always;
-  }
-  .section > .container { width: 100%; }
-  .sec-head { margin-bottom: clamp(44px, 6vh, 84px); }
-
-  /* ---- Light (off-white) sections ---- */
-  .section.light { background: var(--offwhite); color: var(--black); position: relative; overflow: hidden; }
-  .section.light > .container { position: relative; z-index: 2; }
-  /* Spotlight von oben: weicher PNG-Glow, läuft ins Off-White aus */
-  #warum::before {
-    content: ""; position: absolute; left: -18%; right: -18%; top: 0; z-index: 0; pointer-events: none;
-    aspect-ratio: 1036 / 245;
-    background: url("assets/warum_glow_offwhite.png") top center / 100% 100% no-repeat;
-    -webkit-mask-image: radial-gradient(ellipse 72% 96% at 50% 0%, #000 0%, #000 48%, rgba(0,0,0,0.5) 70%, transparent 96%);
-    mask-image: radial-gradient(ellipse 72% 96% at 50% 0%, #000 0%, #000 48%, rgba(0,0,0,0.5) 70%, transparent 96%);
-    transform: translateY(calc(-6% + 20px));
-  }
-  .section.light .step .n { color: rgba(10,10,10,0.45); }
-  #howto .pl-panels { display: grid; }
-  #howto .benefit-panel {
-    display: flex; flex-direction: column; grid-area: 1 / 1;
-    opacity: 0; pointer-events: none;
-    transition: opacity 1.1s var(--easing), transform 1.1s var(--easing);
-  }
-  #howto #panel-biz:not(.active) { transform: translateX(-48px); }
-  #howto #panel-creator:not(.active) { transform: translateX(48px); }
-  #howto .benefit-panel.active { opacity: 1; transform: none; pointer-events: auto; }
-  #howto .steps { flex: 1 0 auto; align-content: start; }
-  #howto .howto-intro { margin-top: auto; padding-top: clamp(28px, 4vh, 48px); padding-bottom: clamp(28px, 5vh, 60px); }
-  .section.light .headline .soft, .section.light .display .soft { color: var(--grey-2); }
-  .section.light .steps-note { color: var(--grey-3); }
-  .section.light .steps-note .hl { color: var(--black); }
-  .section.light .step p { color: var(--black); }
-  .section.light .seg button { border-color: rgba(10,10,10,0.35); color: var(--grey-3); }
-  .section.light .seg button[aria-selected="true"] { color: #fff; }
-
-  /* Warum-Kopf im Referenz-Stil, linksbündig */
-  .warum-head { text-align: left; margin-bottom: clamp(44px, 6vh, 84px); padding-top: clamp(60px, 12vh, 140px); }
-  .warum-head .headline { text-wrap: balance; }
-  .warum-sub { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; color: var(--black); margin: 0 0 38px; }
-
-  /* ---- Warum Creator-Marketing: stats ---- */
-  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 44px); }
-  .why { padding-top: clamp(18px, 2vh, 26px); display: flex; flex-direction: column; align-items: flex-start; }
-  .why .src { margin-top: auto; padding-top: 14px; }
-  .why .v { font-weight: 300; font-size: var(--fs-4); line-height: 1.1; letter-spacing: -0.04em; color: var(--black); white-space: nowrap; }
-  .why .v .u { color: var(--orange); }
-  .why .k { font-size: var(--fs-2); font-weight: 400; letter-spacing: -0.02em; color: var(--black); margin-top: clamp(18px, 2.6vh, 32px); }
-  .why p { font-size: var(--fs-1); line-height: 1.5; color: var(--grey-3); margin-top: clamp(18px, 2.6vh, 32px); max-width: 32ch; }
-  .src { display: inline-block; margin-top: 12px; font-size: var(--fs-1); color: rgba(10,10,10,0.4); border-bottom: 1px solid transparent; transition: color 0.3s var(--easing); }
-  a.src:hover { color: var(--flieder); }
-  .section:not(.light) .src { color: rgba(255,255,255,0.4); }
-  .section:not(.light) a.src:hover { color: var(--flieder-soft); }
-
-  /* ---- Problem/Lösung: crossfade swap ---- */
-  .swap { position: relative; display: block; }
-  .swap .sp { visibility: hidden; display: block; }
-  .swap .sa, .swap .sb {
-    position: absolute; inset: 0; display: block;
-    transition: opacity 0.7s var(--easing), transform 0.7s var(--easing);
-  }
-  .swap .sb { opacity: 0; transform: translateY(-16px); }
-  .flipped .swap .sa { opacity: 0; transform: translateY(16px); }
-  .flipped .swap .sb { opacity: 1; transform: none; }
-
-  /* ---- Verlauf-Hintergrund im Vorteile-Toggle (dunkellila, blasser) ---- */
-  #zielgruppen { overflow: hidden; position: relative; background: #3c2d6b; }
-  #zielgruppen .fs-face.a { color: var(--orange-bright); }
-  #zielgruppen .pl-state .sb { color: var(--orange-bright); }
-  .bp-inline { height: 1.85em; width: auto; display: inline-block; vertical-align: -0.58em; margin-left: 0.15em; }
-  #zielgruppen > .container { position: relative; z-index: 2; }
-  .pl-bg {
-    position: absolute; inset: -20%; z-index: 0; pointer-events: none;
-    filter: blur(46px);
-    transition: opacity 1.2s var(--easing), transform 1.2s var(--easing);
-    will-change: transform, opacity;
-  }
-  .pl-bg.biz {
-    background: radial-gradient(ellipse 46% 52% at 26% 42%, rgba(240,97,43,0.75) 0%, rgba(240,97,43,0.6) 32%, rgba(240,97,43,0.18) 52%, rgba(60,45,107,0) 70%);
-    opacity: 1; transform: translateX(0);
-  }
-  .pl-bg.creator {
-    background: radial-gradient(ellipse 46% 52% at 74% 48%, rgba(240,97,43,0.75) 0%, rgba(240,97,43,0.6) 32%, rgba(240,97,43,0.18) 52%, rgba(60,45,107,0) 72%);
-    opacity: 0; transform: translateX(24%) scale(1.08);
-  }
-  #zielgruppen[data-theme="creator"] .pl-bg.biz { opacity: 0; transform: translateX(-24%) scale(1.08); }
-  #zielgruppen[data-theme="creator"] .pl-bg.creator { opacity: 1; transform: translateX(0); }
-
-  /* fließender Panel-Wechsel im Vorteile-Toggle */
-  #zielgruppen .pl-panels { display: grid; }
-  #zielgruppen .benefit-panel {
-    display: block; grid-area: 1 / 1;
-    opacity: 0; pointer-events: none;
-    transition: opacity 1.1s var(--easing), transform 1.1s var(--easing);
-  }
-  #zielgruppen .benefit-panel.biz-theme { transform: translateX(-48px); }
-  #zielgruppen .benefit-panel.creator-theme { transform: translateX(48px); }
-  #zielgruppen .benefit-panel.active { opacity: 1; transform: none; pointer-events: auto; }
-
-  /* state tag */
-  .pl-state { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.01em; margin-bottom: 38px; }
-  .pl-state .sa { color: #fff; }
-  .pl-state .sb { color: var(--flieder-soft); font-weight: 400; }
-  .creator-theme .pl-state .sb { color: var(--orange); }
-  .section.light .pl-state .sa { color: var(--black); }
-  .section.light .pl-state .sb { color: var(--orange); }
-
-  /* ---- Problem/Lösung: rolling drum stats ---- */
-  .pl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 44px); }
-  .flip-stat { padding-top: clamp(18px, 2vh, 26px); }
-  .flip-stat .k { font-size: var(--fs-1); color: rgba(255,255,255,0.6); }
-  .section.light .flip-stat .k { color: var(--grey-3); }
-
-  .fs-old { height: 24px; margin-top: 12px; font-size: var(--fs-1); color: rgba(255,255,255,0.45); opacity: 0; transform: translateY(6px); transition: opacity 0.6s var(--easing) 0.45s, transform 0.6s var(--easing) 0.45s; }
-  .section.light .fs-old { color: rgba(10,10,10,0.4); }
-  .flipped .fs-old { opacity: 1; transform: none; }
-
-  .fs-drum { position: relative; height: clamp(56px, 5.8vw, 92px); perspective: 900px; margin: 2px 0 10px; }
-  .fs-rot { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform 1s var(--easing); }
-  .flipped .fs-rot { transform: rotateX(-90deg); }
-  .fs-face {
-    position: absolute; inset: 0; display: flex; align-items: center;
-    backface-visibility: hidden; white-space: nowrap;
-    font-weight: 300; letter-spacing: -0.035em; line-height: 1;
-    font-size: var(--fs-4);
-    transition: opacity 0.45s var(--smooth);
-  }
-  .fs-face.a { opacity: 0; }
-  .flipped .fs-face.a { opacity: 1; }
-  .flipped .fs-face.b { opacity: 0; }
-  .fs-face.b { transform: translateZ(clamp(26px, 2.7vw, 42px)); color: #fff; }
-  .fs-face.a { transform: rotateX(90deg) translateZ(clamp(26px, 2.7vw, 42px)); color: var(--flieder-soft); }
-  .creator-theme .fs-face.a { color: var(--orange); }
-  .section.light .fs-face.b { color: rgba(10,10,10,0.38); }
-  .section.light .fs-face.a { color: var(--orange); }
-
-  .fs-desc { font-size: var(--fs-1); line-height: 1.5; color: rgba(255,255,255,0.72); min-height: 48px; }
-  .section.light .fs-desc { color: var(--grey-3); }
-  .fs-desc .swap .sa, .fs-desc .swap .sb { transition-delay: 0.15s; }
-
-  /* ---- So funktioniert's ---- */
-  .howto-intro {
-    position: relative; z-index: 2; text-align: left;
-    font-size: var(--fs-2); font-weight: 300; line-height: 1.45; letter-spacing: -0.01em; color: var(--grey-2);
-    margin-top: clamp(48px, 7vh, 90px);
-  }
-  /* Flieder-Verlauf links (Betriebe) / rechts (Creator) */
-  #howto .pl-bg.biz {
-    background: radial-gradient(ellipse 42% 52% at 14% 50%, rgba(120,120,184,0.5) 0%, rgba(120,120,184,0.18) 45%, rgba(242,240,239,0) 70%);
-  }
-  #howto .pl-bg.creator {
-    background: radial-gradient(ellipse 42% 52% at 86% 50%, rgba(120,120,184,0.5) 0%, rgba(120,120,184,0.18) 45%, rgba(242,240,239,0) 70%);
-  }
-  #howto[data-theme="creator"] .pl-bg.biz { opacity: 0; transform: translateX(-24%) scale(1.08); }
-  #howto[data-theme="creator"] .pl-bg.creator { opacity: 1; transform: translateX(0); }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 44px); }
-  .step { padding-top: clamp(18px, 2vh, 26px); }
-  .step h3 { font-weight: 300; font-size: var(--fs-4); line-height: 1.05; letter-spacing: -0.035em; color: var(--orange-bright); margin: 0; }
-  .step .n { font-weight: 300; font-size: var(--fs-1); letter-spacing: 0.02em; color: rgba(255,255,255,0.5); margin: 10px 0 14px; }
-  .step p { font-size: var(--fs-1); line-height: 1.5; color: rgba(255,255,255,0.72); text-align: justify; hyphens: auto; }
-  .steps-note { margin-top: clamp(36px, 5vh, 64px); font-size: var(--fs-1); color: rgba(255,255,255,0.72); max-width: 60ch; }
-  .steps-note .hl { color: #fff; font-weight: 400; }
-
-  /* ---- Technologie ---- */
-  #tech .tech-intro { font-size: var(--fs-1); line-height: 1.55; color: rgba(255,255,255,0.72); max-width: none; margin-top: clamp(-40px, -4vh, -24px); margin-bottom: clamp(44px, 6vh, 84px); }
-  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.6vw, 44px); }
-  .tech-item { padding-top: clamp(18px, 2vh, 26px); }
-  .tech-item h3 { font-weight: 300; font-size: var(--fs-4); line-height: 1.05; letter-spacing: -0.035em; color: var(--orange-bright); margin: 0 0 14px; }
-  .tech-item p { font-size: var(--fs-1); line-height: 1.5; color: rgba(255,255,255,0.72); max-width: 48ch; }
-  #tech .steps-note { max-width: none; }
-  #tech { position: relative; overflow: hidden; background: linear-gradient(rgba(31,18,56,0.28), rgba(31,18,56,0.28)), url("assets/tech_hintergrund.png") center / cover no-repeat, var(--violet-deep); }
-  #tech > .container { position: relative; z-index: 1; }
-  @media (max-width: 720px) { .tech-grid { grid-template-columns: 1fr; gap: clamp(22px, 4vh, 30px); } }
-
-  /* ---- Toggle ---- */
-  .seg {
-    display: inline-flex; gap: 10px; margin-bottom: clamp(36px, 5vh, 60px);
-  }
-  .seg button {
-    font: inherit; font-weight: 500; font-size: var(--fs-1); cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.55); background: transparent; color: rgba(255,255,255,0.85);
-    padding: clamp(10px, 1.1vw, 14px) clamp(20px, 2.4vw, 32px); border-radius: 999px;
-    transition: color 0.3s var(--easing), background 0.3s var(--easing), border-color 0.3s var(--easing);
-  }
-  .seg button.biz[aria-selected="true"] { border-color: var(--flieder); }
-  .seg button.creator[aria-selected="true"] { border-color: var(--flieder); }
-  .seg button[aria-selected="true"] { color: #fff; }
-  .seg button.biz[aria-selected="true"] { background: var(--flieder); }
-  .seg button.creator[aria-selected="true"] { background: var(--flieder); }
-  .pl-segrow { position: absolute; top: clamp(28px, 5vh, 56px); right: calc(max((100% - 1500px) / 2, 0px) + clamp(24px, 6vw, 80px)); z-index: 3; }
-  .pl-segrow .seg { margin-bottom: 0; }
-  @media (max-width: 760px) { .pl-segrow { position: static; margin-bottom: 20px; padding: 0 clamp(24px, 6vw, 80px); } }
-  .benefit-panel { display: none; }
-  .benefit-panel.active { display: block; }
-
-  /* ---- Finale ---- */
-  .finale {
-    position: relative; overflow: hidden; z-index: 2;
-    scroll-snap-align: start; scroll-snap-stop: always;
-    padding: clamp(56px, 9vh, 110px) 0;
-    border-top: calc(clamp(140px, 26vh, 300px) + 5px) solid var(--offwhite);
-    border-bottom: clamp(64px, 11vh, 130px) solid var(--offwhite);
-    background: url("assets/finale_hintergrund_2.png") center / cover no-repeat, #2e1d54;
-  }
-  .finale .display { margin-bottom: clamp(16px, 2.4vh, 24px); }
-
-  /* ---- Footer ---- */
-  .site-footer { background: var(--offwhite); padding: clamp(48px, 7vh, 80px) 0 clamp(30px, 4vh, 46px); position: relative; z-index: 2; scroll-snap-align: end; }
-  .footer-top { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; }
-  .footer-top img { height: clamp(32px, 3.2vw, 48px); width: auto; }
-  .footer-links { display: flex; flex-wrap: wrap; gap: 14px 28px; font-size: var(--fs-1); color: var(--grey-3); }
-  .footer-links a { transition: color 0.3s var(--easing); }
-  .footer-links a:hover { color: var(--flieder); }
-  .footer-bottom {
-    margin-top: clamp(28px, 4vh, 44px); padding-top: clamp(18px, 2.4vh, 26px);
-    border-top: 1px solid rgba(10,10,10,0.12);
-    display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center;
-    font-size: var(--fs-1); color: var(--grey-3);
-  }
-  .footer-bottom .sep { color: rgba(10,10,10,0.3); }
-  .footer-bottom a { transition: color 0.3s var(--easing); }
-  .footer-bottom a:hover { color: var(--orange); }
-  .footer-bottom .heart { color: var(--orange); display: inline-block; animation: beat 0.9s var(--easing) infinite; }
-  @keyframes beat { 0%,100% { transform: scale(1); } 30% { transform: scale(1.18); } }
-
-  /* ---- Contact modal ---- */
-  .modal-overlay { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(20,10,38,0.62); backdrop-filter: blur(6px); }
-  .modal-overlay.open { display: flex; }
-  .modal {
-    position: relative; width: 100%; max-width: 520px; overflow: hidden;
-    background:
-      radial-gradient(ellipse 70% 45% at 85% -8%, rgba(240,97,43,0.32) 0%, rgba(240,97,43,0.1) 45%, rgba(242,240,239,0) 70%),
-      radial-gradient(ellipse 62% 55% at 6% 108%, rgba(120,120,184,0.34) 0%, rgba(120,120,184,0.1) 50%, rgba(242,240,239,0) 72%),
-      var(--offwhite);
-    color: var(--black); border-radius: 14px; padding: clamp(28px, 4vw, 48px);
-    box-shadow: 0 30px 80px -20px rgba(20,10,38,0.5);
-  }
-  .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: var(--fs-2); line-height: 1; color: var(--grey-3); cursor: pointer; transition: color 0.3s var(--easing); }
-  .modal-close:hover { color: var(--black); }
-  .modal-title { font-weight: 300; font-size: var(--fs-3); line-height: 1; letter-spacing: -0.03em; color: var(--grey-2); }
-  .modal-title .soft { color: var(--grey-2); }
-  .modal-sub { margin-top: 12px; font-size: var(--fs-1); color: var(--grey-3); }
-  .modal-form { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
-  .modal-form label { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-1); color: var(--grey-3); }
-  .modal-form input, .modal-form textarea { font-family: inherit; font-size: var(--fs-1); color: var(--black); background: #fff; border: 1px solid rgba(10,10,10,0.15); border-radius: 8px; padding: 12px 14px; transition: border-color 0.3s var(--easing); resize: vertical; }
-  .modal-form input:focus, .modal-form textarea:focus { outline: none; border-color: var(--flieder); }
-  .modal { max-height: min(90vh, 90svh); overflow-y: auto; }
-  .modal-back { position: absolute; top: 16px; left: 20px; background: none; border: none; font-size: var(--fs-2); line-height: 1; color: var(--grey-3); cursor: pointer; transition: color 0.3s var(--easing); }
-  .modal-back:hover { color: var(--black); }
-  .modal-logo { display: block; height: 38px; width: auto; pointer-events: none; }
-  .submit-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
-  .submit-row .btn-pill { margin-top: 0; }
-  .mail-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .mail-row .modal-mail { margin-top: 18px; }
-  .mail-row .modal-logo { margin-top: 18px; }
-  .choice-grid { margin-top: 28px; display: grid; gap: 14px; }
-  .choice-card {
-    position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
-    text-align: left; cursor: pointer; font: inherit; color: var(--black);
-    padding: 20px 56px 20px 22px; border-radius: 10px;
-    background: #fff; border: 1px solid rgba(10,10,10,0.14);
-    transition: border-color 0.3s var(--easing), background 0.3s var(--easing), transform 0.4s var(--easing);
-  }
-  .choice-card:hover { transform: translateY(-2px); }
-  .choice-card.biz:hover { border-color: var(--flieder); background: rgba(120,120,184,0.1); }
-  .choice-card.creator:hover { border-color: var(--orange); background: rgba(240,97,43,0.08); }
-  .cc-title { font-size: var(--fs-2); font-weight: 300; letter-spacing: -0.02em; }
-  .cc-sub { font-size: var(--fs-1); color: var(--grey-3); }
-  .cc-arrow { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--grey-2); transition: transform 0.4s var(--easing), color 0.3s var(--easing); }
-  .choice-card.biz:hover .cc-arrow { transform: translateY(-50%) translateX(4px); color: var(--flieder); }
-  .choice-card.creator:hover .cc-arrow { transform: translateY(-50%) translateX(4px); color: var(--orange); }
-  .modal-form input.invalid, .modal-form textarea.invalid { border-color: #e25537; }
-  .form-error { font-size: var(--fs-1); color: #d24a2e; }
-  .done-row { margin-top: 24px; }
-  .modal-mail { margin-top: 18px; font-size: var(--fs-1); color: var(--grey-3); }
-  .modal-mail a { color: var(--flieder); transition: color 0.3s var(--easing); }
-  .modal-mail a:hover { color: var(--orange); }
-  .modal-form .btn-pill { margin-top: 8px; align-self: flex-start; cursor: pointer; }
-  /* ---- Mehrseitiges Formular ---- */
-  .form-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
-  .fp-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(10,10,10,0.15); transition: background 0.3s var(--easing), transform 0.3s var(--easing); }
-  .fp-dot.on { background: var(--orange); transform: scale(1.15); }
-  .fp-label { margin-left: 6px; font-size: var(--fs-1); color: var(--grey-3); }
-  .form-page { display: flex; flex-direction: column; gap: 16px; min-height: 232px; align-content: start; }
-  .form-page[hidden] { display: none; }
-  @media (prefers-reduced-motion: no-preference) {
-    .form-page { animation: page-in 0.45s var(--easing); }
-    @keyframes page-in { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
-  }
-  .form-nav [hidden], .modal .btn-pill[hidden] { display: none !important; }
-  .form-nav { display: flex; align-items: center; gap: 16px; }
-  .form-nav .btn-pill { margin-top: 0; }
-  .form-prev { background: none; border: none; font-family: inherit; font-size: var(--fs-1); color: var(--grey-3); cursor: pointer; padding: 0; transition: color 0.3s var(--easing); }
-  .form-prev:hover { color: var(--black); }
-  @media (max-width: 520px) { .modal-form .btn-pill { width: 100%; justify-content: center; } }
-
-  /* ---- Reveal (progressive enhancement) ---- */
-  .reveal { transition: opacity 0.8s var(--easing), transform 0.8s var(--easing); }
-  .anim-ready .reveal { opacity: 0; transform: translateY(26px); }
-  .anim-ready .reveal.in { opacity: 1; transform: none; }
-
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 760px) {
-    .bloom { background: radial-gradient(ellipse 78% 50% at 50% 36%, #f0612b 0%, #e96019 14%, rgba(233,96,25,0.5) 34%, rgba(96,64,116,0.25) 56%, rgba(43,26,77,0) 74%); }
-    .vignette { background: linear-gradient(180deg, transparent 30%, rgba(28,14,54,0.5) 100%); }
-    .top { display: none; }
-    .core .logo { width: min(70vw, 380px); }
-    .contact { width: 100%; }
-    .contact .btn-pill { width: 100%; justify-content: center; }
-    .why-grid, .pl-grid, .steps { grid-template-columns: 1fr; gap: 0; }
-    .why, .flip-stat, .step { padding: clamp(22px, 4vh, 30px) 0; }
-    .fs-drum { height: clamp(44px, 11vw, 60px); }
-    .fs-face { font-size: var(--fs-3); }
-    .fs-desc { min-height: 0; }
-    .finale .btn-pill { width: 100%; justify-content: center; }
-    .footer-top { flex-direction: column; align-items: flex-start; }
-  }
-  .no-anim .fs-rot, .no-anim .fs-face, .no-anim .fs-old, .no-anim .swap .sa, .no-anim .swap .sb { transition: none !important; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .bloom, .bloom2, .bloom3, .footer-bottom .heart, .scroll-cue .cue { animation: none !important; }
-    .anim-ready .reveal { opacity: 1; transform: none; transition: none; }
-    .fs-rot, .fs-old, .swap .sa, .swap .sb, .pl-bg { transition: none !important; }
-    html { scroll-behavior: auto; }
-  }
+  /* sehr breite Bildschirme: Felder nur so breit, wie ihr Inhalt es braucht */
+  @media (min-width: 1500px) { #dabei, #rechtliches { width: min(50%, 860px); } }
+  @media (hover: hover) { .ecke:hover, .spruch:hover, .mail:hover, .kanaele a:hover, .angaben a:hover { color: #ff4814; } }
+  :focus-visible { outline: 2px solid #1f1f1f; outline-offset: 3px; border-radius: 2px; }
+  /* größere Trefferflächen für die kleinen Links, ohne das Layout zu verschieben */
+  .mail, .kanaele a, .angaben a { position: relative; }
+  .mail::after, .kanaele a::after, .angaben a::after { content: ''; position: absolute; inset: -12px -6px; }
+  @media (prefers-reduced-motion: reduce) { .flimmern, #grund, .countdown, .mail { animation: none !important; } .klapp, .pfeil { transition: none !important; } .stern, .muenchen path { animation: none !important; opacity: 1; transform: none; stroke-dashoffset: 0; } }
 </style>
 </head>
 <body>
-<template id="__bundler_thumbnail" data-bg-color="#2b1a4d">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#2b1a4d"/>
-    <ellipse cx="600" cy="430" rx="320" ry="240" fill="#e96019" opacity="0.85"/>
-    <ellipse cx="600" cy="430" rx="180" ry="140" fill="#f0612b"/>
-    <text x="600" y="470" font-family="Outfit, sans-serif" font-size="120" font-weight="300" fill="#f2f0ef" text-anchor="middle" letter-spacing="-4">bellapeer<tspan fill="#E96019">.</tspan></text>
-  </svg>
-</template>
-
-<main id="top">
-
-  <!-- HERO -->
-  <section class="stage">
-    <div class="bloom" aria-hidden="true"></div>
-    <div class="bloom3" aria-hidden="true"></div>
-    <div class="bloom2" aria-hidden="true"></div>
-    <div class="vignette" aria-hidden="true"></div>
-
-    <div class="container">
-      <header class="top">
-        <span class="eyebrow-tag" style="font-size: var(--fs-1)">München · Pre-Launch · 2026</span>
-      </header>
-
-      <div class="core">
-        <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">bellapeer</h1>
-        <h2 class="hero-h reveal" style="font-size: var(--fs-3)"><span class="soft">Bald geht's los</span><span class="o">.</span></h2>
-        <img class="logo reveal" src="assets/logo_offwhite_trim.png" alt="bellapeer" />
-        <p class="lead reveal" style="font-size: var(--fs-2)">Die KI-Plattform, die <span class="hl">lokales Creator-Marketing</span> für den Lifestyle-Sektor skaliert<span class="o">.</span></p>
-        <p class="lead-sub reveal" style="font-size: var(--fs-1)">Unsere KI erstellt das Briefing, findet Creator mit echter lokaler Reichweite und prüft jeden Beitrag – automatisch, ohne Agentur.</p>
-        <div class="contact reveal">
-          <span class="label" style="font-size: var(--fs-2)">Fragen, Ideen oder einfach Hallo sagen<span class="o">?</span></span>
-          <a class="btn-pill" href="mailto:hallo@bellapeer.io" style="font-size: var(--fs-1)">hallo@bellapeer.io <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <footer class="bottom">
-        <a class="scroll-cue" href="#warum">So funktioniert bellapeer <span class="cue">↓</span></a>
-      </footer>
-    </div>
-  </section>
-
-  <!-- WARUM CREATOR-MARKETING (light) -->
-  <section class="section light" id="warum" data-screen-label="Warum Creator-Marketing">
-    <div class="container">
-      <div class="sec-head warum-head">
-        <p class="warum-sub reveal">Warum Creator-Marketing?</p>
-        <h2 class="headline reveal"><span class="soft">Vertraut<span class="o">.</span> Wirksam<span class="o">.</span> Milliardenmarkt</span><span class="o">.</span></h2>
-      </div>
-
-      <div class="why-grid">
-        <div class="why reveal">
-          <div class="v"><span data-count="63">63</span>&nbsp;<span class="u">%</span></div>
-          <p>vertrauen Creatorn mehr als klassischer Werbung.</p>
-          <a class="src" href="https://www.edelman.com/news-awards/only-one-third-of-consumers-trust-most-of-the-brands-they-buy" target="_blank" rel="noopener">Edelman, 2019 ↗</a>
-        </div>
-        <div class="why reveal">
-          <div class="v"><span data-count="94">94</span>&nbsp;<span class="u">%</span></div>
-          <p>der Unternehmen sehen mehr ROI als mit klassischer Werbung.</p>
-          <a class="src" href="https://www.creatoriq.com/blog/creator-marketing-trends-2025" target="_blank" rel="noopener">CreatorIQ, 2025 ↗</a>
-        </div>
-        <div class="why reveal">
-          <div class="v"><span data-count="1000" data-count-unit="mio">1&nbsp;Mrd.</span>&nbsp;€<span class="u">+</span></div>
-          <p>deutscher Creator-Markt bis 2030.</p>
-          <a class="src" href="https://www.bvdw.org/wp-content/uploads/2025/07/Influencer-Marketing-Content-Creation.pdf" target="_blank" rel="noopener">BVDW, 2025 ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM/LÖSUNG: Betriebe & Creator (dark) -->
-  <section class="section" id="zielgruppen" data-screen-label="Problem & Lösung">
-    <div class="pl-bg biz" aria-hidden="true"></div>
-    <div class="pl-bg creator" aria-hidden="true"></div>
-    <div class="pl-segrow reveal">
-      <div class="seg" role="tablist" aria-label="Zielgruppe umschalten">
-        <button class="biz" role="tab" aria-selected="true" data-panel="biz">Für Betriebe</button>
-        <button class="creator" role="tab" aria-selected="false" data-panel="creator">Für Creator</button>
-      </div>
-    </div>
-    <div class="container">
-
-      <div class="pl-panels">
-      <div class="benefit-panel active biz-theme" data-pl data-panel-id="biz" role="tabpanel">
-      <div class="sec-head" data-flip>
-        <div class="pl-state reveal">
-          <span class="swap">
-            <span class="sp">Status quo Probleme</span>
-            <span class="sa">Status quo Probleme</span>
-            <span class="sb">Mit <img class="bp-inline" src="assets/logo_orange_trim.png" alt="bellapeer" /></span>
-          </span>
-        </div>
-        <h2 class="headline reveal">
-          <span class="swap">
-            <span class="sp">Sichtbarkeit, die sich jeder Betrieb leisten kann.</span>
-            <span class="sa"><span class="soft">Sichtbarkeit hat ihren Preis</span><span class="o">.</span></span>
-            <span class="sb"><span class="soft">Sichtbarkeit, die sich jeder Betrieb leisten kann</span><span class="o">.</span></span>
-          </span>
-        </h2>
-      </div>
-
-      <div class="pl-grid">
-        <div class="flip-stat reveal" data-flip>
-          <div class="fs-old"><s>Ø 1.300 € je Post</s></div>
-          <div class="fs-drum" aria-hidden="false">
-            <div class="fs-rot">
-              <div class="fs-face b">Ø&nbsp;1.300&nbsp;€</div>
-              <div class="fs-face a">20–80&nbsp;€</div>
-            </div>
-          </div>
-          <div class="fs-desc">
-            <span class="swap">
-              <span class="sp">je gesponsertem Post</span>
-              <span class="sa">je gesponsertem Post</span>
-              <span class="sb">effektive Kosten pro Deal</span>
-            </span>
-          </div>
-          <span class="swap">
-            <span class="sp"><a class="src" href="https://www.shopify.com/de/blog/influencer-preise" target="_blank" rel="noopener">Shopify ↗</a></span>
-            <span class="sa"><a class="src" href="https://www.shopify.com/de/blog/influencer-preise" target="_blank" rel="noopener">Shopify ↗</a></span>
-            <span class="sb"><span class="src">&nbsp;</span></span>
-          </span>
-        </div>
-
-        <div class="flip-stat reveal" data-flip>
-          <div class="fs-old"><s>8–12 Wochen</s></div>
-          <div class="fs-drum">
-            <div class="fs-rot">
-              <div class="fs-face b">8–12&nbsp;Wochen</div>
-              <div class="fs-face a">5&nbsp;Minuten</div>
-            </div>
-          </div>
-          <div class="fs-desc">
-            <span class="swap">
-              <span class="sp">Angebot eingeben – das Briefing erstellt die KI</span>
-              <span class="sa">bis eine Kampagne wirkt</span>
-              <span class="sb">Angebot eingeben – das Briefing erstellt die KI</span>
-            </span>
-          </div>
-          <span class="swap">
-            <span class="sp"><a class="src" href="https://later.com/blog/timeline-for-influencer-marketing-campaigns/" target="_blank" rel="noopener">Later ↗</a></span>
-            <span class="sa"><a class="src" href="https://later.com/blog/timeline-for-influencer-marketing-campaigns/" target="_blank" rel="noopener">Later ↗</a></span>
-            <span class="sb"><span class="src">&nbsp;</span></span>
-          </span>
-        </div>
-
-        <div class="flip-stat reveal" data-flip>
-          <div class="fs-old"><s>46 % schaffen es kaum</s></div>
-          <div class="fs-drum">
-            <div class="fs-rot">
-              <div class="fs-face b">46&nbsp;%</div>
-              <div class="fs-face a txt">Content</div>
-            </div>
-          </div>
-          <div class="fs-desc">
-            <span class="swap">
-              <span class="sp">tun sich schwer, regelmäßig zu posten</span>
-              <span class="sa">tun sich schwer, regelmäßig zu posten</span>
-              <span class="sb">von Creatorn – ganz ohne eigenes Posten</span>
-            </span>
-          </div>
-          <span class="swap">
-            <span class="sp"><a class="src" href="https://www.bitkom.org/Presse/Presseinformation/Social-Media-Handel-Posts" target="_blank" rel="noopener">Bitkom ↗</a></span>
-            <span class="sa"><a class="src" href="https://www.bitkom.org/Presse/Presseinformation/Social-Media-Handel-Posts" target="_blank" rel="noopener">Bitkom ↗</a></span>
-            <span class="sb"><span class="src">&nbsp;</span></span>
-          </span>
-        </div>
-      </div>
-      </div>
-
-      <div class="benefit-panel creator-theme" data-pl data-panel-id="creator" role="tabpanel">
-      <div class="sec-head" data-flip>
-        <div class="pl-state reveal">
-          <span class="swap">
-            <span class="sp">Status quo Probleme</span>
-            <span class="sa">Status quo Probleme</span>
-            <span class="sb">Mit <img class="bp-inline" src="assets/logo_orange_trim.png" alt="bellapeer" /></span>
-          </span>
-        </div>
-        <h2 class="headline reveal">
-          <span class="swap">
-            <span class="sp">Der aktuelle Weg ist mühsam.</span>
-            <span class="sa"><span class="soft">Der aktuelle Weg ist mühsam</span><span class="o">.</span></span>
-            <span class="sb"><span class="soft">Einfach erleben</span><span class="o">.</span></span>
-          </span>
-        </h2>
-      </div>
-
-      <div class="pl-grid">
-        <div class="flip-stat reveal" data-flip>
-          <div class="fs-old"><s>75 % unter Posting-Druck</s></div>
-          <div class="fs-drum">
-            <div class="fs-rot">
-              <div class="fs-face b">75&nbsp;%</div>
-              <div class="fs-face a txt">Content</div>
-            </div>
-          </div>
-          <div class="fs-desc">
-            <span class="swap">
-              <span class="sp">spüren ständigen Posting-Druck</span>
-              <span class="sa">spüren ständigen Posting-Druck</span>
-              <span class="sb">du postest, wann du willst</span>
-            </span>
-          </div>
-          <span class="swap">
-            <span class="sp"><a class="src" href="https://news.patreon.com/articles/unlocking-creative-independence-in-the-age-of-algorithms" target="_blank" rel="noopener">Patreon ↗</a></span>
-            <span class="sa"><a class="src" href="https://news.patreon.com/articles/unlocking-creative-independence-in-the-age-of-algorithms" target="_blank" rel="noopener">Patreon ↗</a></span>
-            <span class="sb"><span class="src">&nbsp;</span></span>
-          </span>
-        </div>
-
-        <div class="flip-stat reveal" data-flip>
-          <div class="fs-old"><s>fast 60 % kämpfen um Deals</s></div>
-          <div class="fs-drum">
-            <div class="fs-rot">
-              <div class="fs-face b">fast&nbsp;60&nbsp;%</div>
-              <div class="fs-face a txt">Du wählst</div>
-            </div>
-          </div>
-          <div class="fs-desc">
-            <span class="swap">
-              <span class="sp">kämpfen um jeden einzelnen Deal</span>
-              <span class="sa">kämpfen um jeden einzelnen Deal</span>
-              <span class="sb">kein Pitchen, kein Warten</span>
-            </span>
-          </div>
-          <span class="swap">
-            <span class="sp"><a class="src" href="https://www.marketingbrew.com/stories/2022/11/09/400-creators-reveal-what-s-most-important-in-a-brand-partnership" target="_blank" rel="noopener">Marketing Brew ↗</a></span>
-            <span class="sa"><a class="src" href="https://www.marketingbrew.com/stories/2022/11/09/400-creators-reveal-what-s-most-important-in-a-brand-partnership" target="_blank" rel="noopener">Marketing Brew ↗</a></span>
-            <span class="sb"><span class="src">&nbsp;</span></span>
-          </span>
-        </div>
-
-        <div class="flip-stat reveal" data-flip>
-          <div class="fs-old"><s>nur 4 % leben davon</s></div>
-          <div class="fs-drum">
-            <div class="fs-rot">
-              <div class="fs-face b">nur&nbsp;4&nbsp;%</div>
-              <div class="fs-face a txt">Sofort belohnt</div>
-            </div>
-          </div>
-          <div class="fs-desc">
-            <span class="swap">
-              <span class="sp">leben von ihrer Reichweite</span>
-              <span class="sa">leben von ihrer Reichweite</span>
-              <span class="sb">dein Erlebnis ist die Vergütung – ohne Umweg</span>
-            </span>
-          </div>
-          <span class="swap">
-            <span class="sp"><a class="src" href="https://www.businessinsider.de/wirtschaft/umfrage-zeigt-wie-viel-influencer-verdienen-nur-4-prozent-koennen-von-ihren-accounts-leben/" target="_blank" rel="noopener">Business Insider ↗</a></span>
-            <span class="sa"><a class="src" href="https://www.businessinsider.de/wirtschaft/umfrage-zeigt-wie-viel-influencer-verdienen-nur-4-prozent-koennen-von-ihren-accounts-leben/" target="_blank" rel="noopener">Business Insider ↗</a></span>
-            <span class="sb"><span class="src">&nbsp;</span></span>
-          </span>
-        </div>
-      </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SO FUNKTIONIERT'S (light) -->
-  <section class="section light" id="howto" data-screen-label="So funktioniert's">
-    <div class="pl-bg biz" aria-hidden="true"></div>
-    <div class="pl-bg creator" aria-hidden="true"></div>
-    <div class="pl-segrow reveal">
-      <div class="seg" role="tablist" aria-label="Ablauf umschalten">
-        <button class="biz" role="tab" aria-selected="true" data-panel="biz">Für Betriebe</button>
-        <button class="creator" role="tab" aria-selected="false" data-panel="creator">Für Creator</button>
-      </div>
-    </div>
-    <div class="container">
-      <div class="sec-head">
-        <p class="eyebrow-sec reveal">So funktioniert's<span class="o">.</span></p>
-        <h2 class="headline reveal"><span class="soft">In drei Schritten zur Wirkung</span><span class="o">.</span></h2>
-      </div>
-
-      <div class="pl-panels">
-      <div class="benefit-panel active" id="panel-biz" data-panel-id="biz" role="tabpanel">
-        <div class="steps">
-          <div class="step reveal">
-            <h3>Starten</h3>
-            <div class="n">01</div>
-            <p>Füge dein Angebot hinzu und beschreibe kurz dein Ziel – mehr brauchst du nicht. Unsere KI erstellt daraus in Minuten ein fertiges Kampagnen-Briefing und spielt es an passende Creator aus, ganz ohne Agentur.</p>
-          </div>
-          <div class="step reveal">
-            <h3>Teilen</h3>
-            <div class="n">02</div>
-            <p>bellapeer schlägt dir geprüfte Creator vor – der Local-Reach-Score zählt lokale Reichweite und Passung statt Follower-Zahl. Sie produzieren authentische Stories, Reels und TikToks – frei nutzbar für deine Kanäle.</p>
-          </div>
-          <div class="step reveal">
-            <h3>Wachsen</h3>
-            <div class="n">03</div>
-            <p>bellapeer prüft jeden veröffentlichten Beitrag automatisch auf dein Briefing – erst dann wird abgerechnet. In der App siehst du Reichweite, Klicks und welche Beiträge Gäste und Umsatz bringen.</p>
-          </div>
-        </div>
-        <p class="howto-intro">5 Minuten Aufwand für dich – den Rest, von der Creator-Suche bis zum Ergebnis, übernehmen wir<span class="o">.</span></p>
-      </div>
-
-      <div class="benefit-panel" id="panel-creator" data-panel-id="creator" role="tabpanel">
-        <div class="steps">
-          <div class="step">
-            <h3>Entdecken</h3>
-            <div class="n">01</div>
-            <p>Finde Angebote geprüfter Lifestyle-Betriebe in deiner Nähe und buche mit einem Klick in der App. Deine lokale Reichweite zählt, nicht die Follower-Zahl – so haben auch kleinere Creator faire Chancen.</p>
-          </div>
-          <div class="step">
-            <h3>Genießen</h3>
-            <div class="n">02</div>
-            <p>Erlebe dein Angebot vor Ort, ohne dafür zu zahlen – du aktivierst den Deal beim Besuch einfach in der App. Halte den Moment als Story oder Reel fest, so wie du es ohnehin posten würdest.</p>
-          </div>
-          <div class="step">
-            <h3>Posten</h3>
-            <div class="n">03</div>
-            <p>Veröffentliche deinen Content nach dem Kurz-Briefing und markiere die Location – bellapeer erkennt deinen Beitrag automatisch, ganz ohne Nachweis. Wiederhole es, wann immer du möchtest.</p>
-          </div>
-        </div>
-        <p class="howto-intro">Du entdeckst ein Angebot in deiner Nähe, erlebst es – neuer Content für deine Kanäle entsteht ganz nebenbei<span class="o">.</span></p>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECHNOLOGIE (dark) -->
-  <section class="section" id="tech" data-screen-label="Technologie">
-    <div class="container">
-      <div class="sec-head">
-        <p class="eyebrow-sec reveal">Die Technologie hinter <img class="bp-inline" src="assets/logo_orange_trim.png" alt="bellapeer" /><span class="o">.</span></p>
-        <h2 class="headline reveal"><span class="soft">Keine Agentur, sondern eine KI-Plattform</span><span class="o">.</span></h2>
-      </div>
-      <p class="tech-intro reveal">Unsere Technologie übernimmt die Arbeit, die Creator-Marketing bisher teuer und langsam gemacht hat.</p>
-      <div class="tech-grid">
-        <div class="tech-item reveal">
-          <h3>KI-Briefing</h3>
-          <p>Aus Angebot und Ziel erstellt unsere KI in Minuten das fertige Kampagnen-Briefing.</p>
-        </div>
-        <div class="tech-item reveal">
-          <h3>Local Reach</h3>
-          <p>Unser Local-Reach-Score misst, wie viele Menschen ein Creator wirklich in deiner Umgebung erreicht.</p>
-        </div>
-        <div class="tech-item reveal">
-          <h3>KI-Prüfung</h3>
-          <p>Jedes Creator-Profil wird vor dem Deal geprüft – und jeder Beitrag nach der Veröffentlichung.</p>
-        </div>
-      </div>
-      <p class="steps-note reveal">Jeder abgeschlossene Deal macht <span class="hl">bellapeer besser</span> – mehr Daten, passendere Matches<span class="o">.</span></p>
-    </div>
-  </section>
-
-  <!-- FINALE -->
-  <section class="finale" id="start" data-screen-label="Bereit">
-    <div class="container">
-      <h2 class="display reveal"><span class="soft">Bereit für deinen</span> ersten Klick<span class="o">?</span></h2>
-      <a class="btn-pill ghost-light reveal" href="#" data-contact>Sei dabei <span class="arrow">→</span></a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <img src="assets/logo_flieder.png" alt="bellapeer" />
-      <nav class="footer-links">
-        <a href="#" data-contact>Kontakt</a>
-        <a href="https://www.instagram.com/bellapeer.io" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.tiktok.com/@bellapeer.io" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://www.linkedin.com/company/bellapeer" target="_blank" rel="noopener">LinkedIn</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span id="year">2026</span> bellapeer</span>
-      <span class="sep">·</span>
-      <span>Mit <span class="heart">♥</span> aus München</span>
-      <span class="sep">·</span>
-      <a href="impressum.html">Impressum</a>
-    </div>
-  </div>
-</footer>
-
-<div class="modal-overlay" id="contactModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
-    <button class="modal-back" id="contactBack" aria-label="Zurück" hidden>←</button>
-    <button class="modal-close" id="closeContact" aria-label="Schließen">×</button>
-
-    <div class="modal-step" id="stepChoice">
-      <h3 class="modal-title" id="cmTitle"><span class="soft">Sag</span> Hallo<span class="o">.</span></h3>
-      <p class="modal-sub">Wer bist du?</p>
-      <div class="choice-grid">
-        <button type="button" class="choice-card biz" data-choice="biz">
-          <span class="cc-title">Ich bin ein Betrieb</span>
-          <span class="cc-sub">Café, Restaurant, Studio &amp; mehr</span>
-          <span class="cc-arrow">→</span>
-        </button>
-        <button type="button" class="choice-card creator" data-choice="creator">
-          <span class="cc-title">Ich bin Creator</span>
-          <span class="cc-sub">Instagram oder TikTok</span>
-          <span class="cc-arrow">→</span>
-        </button>
-      </div>
-      <div class="mail-row">
-        <span></span>
-        <img class="modal-logo" src="assets/logo_flieder_trim.png" alt="" aria-hidden="true" />
-      </div>
-    </div>
-
-    <div class="modal-step" id="stepBiz" hidden>
-      <h3 class="modal-title"><span class="soft">Für</span> Betriebe<span class="o">.</span></h3>
-      <form class="modal-form" id="formBiz" novalidate>
-        <div class="form-progress" aria-hidden="true"><span class="fp-dot on"></span><span class="fp-dot"></span><span class="fp-dot"></span><span class="fp-label">Schritt 1 von 3</span></div>
-        <div class="form-page" data-page="1">
-          <label>Name des Betriebs *<input type="text" name="betrieb" placeholder="z. B. Dein Café, Studio oder Restaurant" required /></label>
-          <label>Standort *<input type="text" name="standort" placeholder="München" required /></label>
-        </div>
-        <div class="form-page" data-page="2" hidden>
-          <label>Dein Name *<input type="text" name="name" placeholder="Max Mustermann" required /></label>
-          <label>E-Mail-Adresse *<input type="email" name="email" placeholder="max@beispiel.de" required /></label>
-          <label>Telefonnummer *<input type="tel" name="telefon" placeholder="+49 151 2345678" required /></label>
-        </div>
-        <div class="form-page" data-page="3" hidden>
-          <label>Deine Nachricht<textarea name="message" rows="4" placeholder="Erzähl uns kurz von deinem Betrieb …"></textarea></label>
-        </div>
-        <p class="form-error" hidden>Bitte fülle alle Pflichtfelder korrekt aus.</p>
-        <div class="submit-row">
-          <div class="form-nav">
-            <button type="button" class="form-prev" hidden>← Zurück</button>
-            <button type="button" class="btn-pill ghost form-next" style="font-size: var(--fs-1)">Weiter <span class="arrow">→</span></button>
-            <button type="submit" class="btn-pill ghost form-submit" style="font-size: var(--fs-1)" hidden>Senden <span class="arrow">→</span></button>
-          </div>
-          <img class="modal-logo" src="assets/logo_flieder_trim.png" alt="" aria-hidden="true" />
-        </div>
-      </form>
-    </div>
-
-    <div class="modal-step" id="stepCreator" hidden>
-      <h3 class="modal-title"><span class="soft">Für</span> Creator<span class="o">.</span></h3>
-      <form class="modal-form" id="formCreator" novalidate>
-        <div class="form-progress" aria-hidden="true"><span class="fp-dot on"></span><span class="fp-dot"></span><span class="fp-dot"></span><span class="fp-label">Schritt 1 von 3</span></div>
-        <div class="form-page" data-page="1">
-          <label>Dein Name *<input type="text" name="name" placeholder="Max Mustermann" required /></label>
-          <label>Wohnort *<input type="text" name="wohnort" placeholder="München" required /></label>
-        </div>
-        <div class="form-page" data-page="2" hidden>
-          <label>Instagram- oder TikTok-Profil *<input type="text" name="profil" placeholder="@deinhandle" required /></label>
-          <label>E-Mail-Adresse *<input type="email" name="email" placeholder="max@beispiel.de" required /></label>
-          <label>Telefonnummer<input type="tel" name="telefon" placeholder="+49 151 2345678" /></label>
-        </div>
-        <div class="form-page" data-page="3" hidden>
-          <label>Deine Nachricht<textarea name="message" rows="4" placeholder="Erzähl uns kurz von dir …"></textarea></label>
-        </div>
-        <p class="form-error" hidden>Bitte fülle alle Pflichtfelder korrekt aus.</p>
-        <div class="submit-row">
-          <div class="form-nav">
-            <button type="button" class="form-prev" hidden>← Zurück</button>
-            <button type="button" class="btn-pill ghost form-next" style="font-size: var(--fs-1)">Weiter <span class="arrow">→</span></button>
-            <button type="submit" class="btn-pill ghost form-submit" style="font-size: var(--fs-1)" hidden>Senden <span class="arrow">→</span></button>
-          </div>
-          <img class="modal-logo" src="assets/logo_flieder_trim.png" alt="" aria-hidden="true" />
-        </div>
-      </form>
-    </div>
-
-    <div class="modal-step" id="stepDone" hidden>
-      <h3 class="modal-title">Danke<span class="o">!</span></h3>
-      <p class="modal-sub">Wir melden uns bald bei dir.</p>
-      <div class="done-row submit-row"><button type="button" class="btn-pill ghost" id="doneClose" style="font-size: var(--fs-1)">Schließen</button><img class="modal-logo" src="assets/logo_flieder_trim.png" alt="" aria-hidden="true" /></div>
-    </div>
-  </div>
+<div class="leiste oben"><button class="spruch" id="spruch" lang="en">The best ads have names.</button><button class="ecke" aria-controls="worum" aria-expanded="false"><span class="pfeil" aria-hidden="true">↓</span><span class="voll">Was wird hier gekocht?</span><span class="kurz">Was kocht hier?</span></button></div>
+<div class="feld" id="feld">
+  <canvas id="grund" aria-hidden="true"></canvas>
+  <canvas id="koerner" aria-hidden="true"></canvas>
+  <canvas id="marke" role="img" aria-label="bellapeer"></canvas>
+  <canvas id="funken" aria-hidden="true"></canvas>
+  <div class="flimmern" id="flimmern" aria-hidden="true"></div>
 </div>
 
+<section class="klapp" id="worum" aria-label="Worum es geht">
+  <h1 class="gross" lang="en">Be the talk of the&nbsp;town.</h1>
+  <div>
+    <p class="text">Manche Produkte verkaufen sich, weil die ganze Stadt über sie&nbsp;redet.</p>
+    <p class="text">Genau das brauen wir&nbsp;gerade.</p>
+    <p class="text bald">Bald wird&nbsp;serviert.</p>
+    <div class="route">
+      <p class="klein halt"><svg class="muenchen" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="100" d="M14 92 H86 M24 92 V46 C24 33 29 27 33 22 C37 27 42 33 42 46 V92 M33 22 V11 M58 92 V46 C58 33 63 27 67 22 C71 27 76 33 76 46 V92 M67 22 V11 M42 62 H58"/></svg>Erster Halt: München&nbsp;· <span class="nb">48.137° N · 11.575° E</span></p>
+      <p class="klein ziel"><svg class="europa" viewBox="0 0 100 100" aria-hidden="true"><polygon class="stern" style="--i:0" points="50.00,4.00 52.00,9.25 57.61,9.53 53.23,13.05 54.70,18.47 50.00,15.40 45.30,18.47 46.77,13.05 42.39,9.53 48.00,9.25"/><polygon class="stern" style="--i:1" points="69.00,9.09 71.00,14.34 76.61,14.62 72.23,18.14 73.70,23.56 69.00,20.49 64.30,23.56 65.77,18.14 61.39,14.62 67.00,14.34"/><polygon class="stern" style="--i:2" points="82.91,23.00 84.91,28.25 90.52,28.53 86.14,32.05 87.61,37.47 82.91,34.40 78.21,37.47 79.68,32.05 75.30,28.53 80.91,28.25"/><polygon class="stern" style="--i:3" points="88.00,42.00 90.00,47.25 95.61,47.53 91.23,51.05 92.70,56.47 88.00,53.40 83.30,56.47 84.77,51.05 80.39,47.53 86.00,47.25"/><polygon class="stern" style="--i:4" points="82.91,61.00 84.91,66.25 90.52,66.53 86.14,70.05 87.61,75.47 82.91,72.40 78.21,75.47 79.68,70.05 75.30,66.53 80.91,66.25"/><polygon class="stern" style="--i:5" points="69.00,74.91 71.00,80.16 76.61,80.44 72.23,83.96 73.70,89.38 69.00,86.31 64.30,89.38 65.77,83.96 61.39,80.44 67.00,80.16"/><polygon class="stern" style="--i:6" points="50.00,80.00 52.00,85.25 57.61,85.53 53.23,89.05 54.70,94.47 50.00,91.40 45.30,94.47 46.77,89.05 42.39,85.53 48.00,85.25"/><polygon class="stern" style="--i:7" points="31.00,74.91 33.00,80.16 38.61,80.44 34.23,83.96 35.70,89.38 31.00,86.31 26.30,89.38 27.77,83.96 23.39,80.44 29.00,80.16"/><polygon class="stern" style="--i:8" points="17.09,61.00 19.09,66.25 24.70,66.53 20.32,70.05 21.79,75.47 17.09,72.40 12.39,75.47 13.86,70.05 9.48,66.53 15.09,66.25"/><polygon class="stern" style="--i:9" points="12.00,42.00 14.00,47.25 19.61,47.53 15.23,51.05 16.70,56.47 12.00,53.40 7.30,56.47 8.77,51.05 4.39,47.53 10.00,47.25"/><polygon class="stern" style="--i:10" points="17.09,23.00 19.09,28.25 24.70,28.53 20.32,32.05 21.79,37.47 17.09,34.40 12.39,37.47 13.86,32.05 9.48,28.53 15.09,28.25"/><polygon class="stern" style="--i:11" points="31.00,9.09 33.00,14.34 38.61,14.62 34.23,18.14 35.70,23.56 31.00,20.49 26.30,23.56 27.77,18.14 23.39,14.62 29.00,14.34"/></svg>Ziel: Europa&nbsp;· <span class="nb">49.843° N · 9.902° E</span></p>
+    </div>
+  </div>
+</section>
+<section class="klapp" id="dabei" aria-label="Früh dabei sein">
+  <h2 class="gross dabei-titel" lang="en">Pull up a&nbsp;chair.</h2>
+  <p class="text">Wir haben schon gesprochen? Schön, dass du wieder da&nbsp;bist.</p>
+  <p class="text">Neu hier? Sag hallo, wir erzählen dir gern&nbsp;mehr.</p>
+  <p class="text">Feedback und Ideen? Hier hat jede Stimme einen&nbsp;Platz.</p>
+  <p class="klein start">Wir starten Q1/27 · noch <span class="countdown" id="countdown" aria-live="off">– Tage · –:–:–</span></p>
+  <p class="text mail-zeile"><a class="mail" href="mailto:hallo@bellapeer.io">hallo@bellapeer.io</a></p>
+  <p class="klein kanaele"><a href="https://www.linkedin.com/company/bellapeer" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/bellapeer.io" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a><a href="https://www.tiktok.com/@bellapeer.io" target="_blank" rel="noopener">TikTok <span aria-hidden="true">↗</span></a></p>
+</section>
+<section class="klapp" id="rechtliches" aria-label="Impressum und Datenschutz">
+  <h2 class="gross recht-titel">Impressum</h2>
+  <dl class="angaben">
+    <dt>Anbieter</dt><dd><span class="nb">Tim Tasol,</span> <span class="nb">Om Agrawal,</span> <span class="nb">Chiara Vetter</span></dd>
+    <dt>Anschrift</dt><dd><span class="nb">Rosenheimer Straße 106,</span> <span class="nb">81669 München</span></dd>
+    <dt>E-Mail</dt><dd><a href="mailto:hallo@bellapeer.io">hallo@bellapeer.io</a></dd>
+    <dt>Telefon</dt><dd><a href="tel:+491728088814" class="nb">+49 172 8088814</a></dd>
+  </dl>
+  <h2 class="recht-unter" id="datenschutz">Datenschutz</h2>
+  <p class="recht">Verantwortlich sind die oben genannten Anbieter. Diese Seite setzt keine Cookies, nutzt kein Tracking und lädt keine Inhalte von Dritten; auch die Schriften liegen bei&nbsp;uns.</p>
+  <p class="recht">Beim Aufruf verarbeitet unser Hosting-Anbieter GitHub (GitHub Inc., USA) technisch notwendige Zugriffsdaten wie IP-Adresse, Zeitpunkt und aufgerufene Seite, um die Seite sicher auszuliefern; unser berechtigtes Interesse ist der sichere Betrieb der Seite <span class="nb">(Art. 6 Abs. 1 lit. f DSGVO)</span>. Die Übermittlung in die USA stützt sich auf das <span class="nb">EU-US</span> Data Privacy Framework (Angemessenheitsbeschluss der <span class="nb">EU-Kommission</span> vom&nbsp;10.07.2023). Ohne diese Daten kann die Seite nicht angezeigt werden. GitHub speichert die IP-Adresse aus Sicherheitsgründen und nennt dafür keine feste Frist; Einzelheiten stehen in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von&nbsp;GitHub</a>.</p>
+  <p class="recht">Eine E-Mail an uns ist freiwillig. Schreibst du uns, nutzen wir deine Angaben nur, um zu antworten <span class="nb">(Art. 6 Abs. 1 lit. b bzw. f DSGVO)</span>, und löschen sie, sobald sie dafür nicht mehr gebraucht&nbsp;werden. Unser E-Mail-Dienst ist Google Workspace (Google Cloud EMEA Limited, Irland); Google verarbeitet die Nachrichten in unserem Auftrag, eine Übermittlung in die USA stützt sich ebenfalls auf das <span class="nb">EU-US</span> Data Privacy&nbsp;Framework.</p>
+  <p class="recht">Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde, etwa dem Bayerischen Landesamt für Datenschutzaufsicht. Eine E-Mail an hallo@bellapeer.io&nbsp;genügt.</p>
+  <p class="recht">Widerspruchsrecht: Soweit wir Daten auf Grundlage berechtigter Interessen verarbeiten <span class="nb">(Art. 6 Abs. 1 lit. f DSGVO)</span>, kannst du aus Gründen, die sich aus deiner besonderen Situation ergeben, jederzeit widersprechen <span class="nb">(Art. 21 DSGVO)</span>.</p>
+  <p class="recht-fuss">Angaben gemäß §&nbsp;5&nbsp;DDG und Art.&nbsp;13&nbsp;DSGVO<span class="trenn"> · </span><span class="nb">Stand Oktober 2026</span></p>
+</section>
+<div class="leiste unten"><button class="ecke" aria-controls="dabei" aria-expanded="false">Kennen wir uns schon?<span class="pfeil" aria-hidden="true">↑</span></button><button class="ecke" aria-controls="rechtliches" aria-expanded="false"><span>Impressum<span class="lang"> &amp; Datenschutz</span></span><span class="pfeil" aria-hidden="true">↑</span></button></div>
+
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+(function () {
+  // Grund: Foto mit Korn; Farbe tragen die Partikel.
+  var GRUND = [176, 179, 186];                 // Silbergrau (#b0b0b0), einen Hauch kühler
+  var SCHWANKUNG = 26;                         // Helligkeitsschwankung des Grunds, kaum sichtbar
+  var PARTIKEL = [                             // Farbe, Anteil
+    [[31, 31, 31], 0.30],                      // Karbonschwarz: gibt den grauen Schimmer
+    [[255, 255, 255], 0.22],                   // Reinweiß
+    [[185, 214, 254], 0.18],                   // Eisblau
+    [[110, 160, 250], 0.10],                   // kräftigeres Blau
+    [[255, 72, 20], 0.12],                     // Feuerorange
+    [[42, 0, 82], 0.08]                        // Nachtviolett
+  ];
+  var KORN = 22;            // neutrales Korn auf jedem Pixel (nur Helligkeit)
+  var KLUMPEN = 18;         // gröberes Korn (Flecken)
+  var WISCH = 6;            // waagerechte Wischspuren, kaum sichtbar
+  var TOENUNG = 0.85;       // wie stark eine Farbe stellenweise häufiger wird (0 = überall gleich)
+  var DICHTE = 11;          // ein farbiges Partikel je so vielen CSS-Pixeln
+  var HOECHSTENS = 150000;  // Obergrenze der Partikel, damit sehr große Bildschirme flüssig bleiben
+  var NAHT = 0.64;          // Lage der dunklen Zone (oben Lila und Blau, unten Orange)
+  var SCHICHT = 0;          // wie stark der Grund die Schichtfarbe annimmt (verwaschen)
+  var ORANGE_OBEN = 0.55;   // schmaler oranger Schimmer ganz oben: Stärke
+  var ORANGE_HOEHE = 0.045; // … und wie weit er nach unten ausläuft (Anteil der Höhe)
+  var RADIUS = 240;         // Reichweite der Maus in CSS-Pixeln
+  var ZUG = 15;             // maximale Verschiebung eines Partikels zur Maus hin
+  // Klick-Welle: eine Kettenreaktion von Partikel zu Partikel, je Klick anders geformt
+  var WELLE = 7;            // wie weit ein Partikel angestoßen wird
+  var TEMPO = 190;          // mittleres Tempo der Front (CSS-Pixel je Sekunde)
+  var REICH = 720;          // wie weit die Reaktion trägt (CSS-Pixel)
+  var STREU = 0.45;         // Verzögerung je Partikel (Sekunden), macht die Front körnig
+  var NACHLEUCHTEN = 0.8;   // wie lange ein Partikel nachleuchtet (Sekunden)
+  var LEBEN = REICH / TEMPO / 0.7 + STREU + 3 * NACHLEUCHTEN;
+  var HUELLE = 320, STOSS = new Float32Array(Math.ceil(4 * NACHLEUCHTEN * HUELLE) + 2), LEUCHT = new Float32Array(STOSS.length);
+  for (var hi = 0; hi < STOSS.length; hi++) {
+    var ht = hi / HUELLE;
+    STOSS[hi] = Math.exp(-ht / 0.45) * (1 - Math.exp(-ht * 10)); LEUCHT[hi] = Math.exp(-ht / NACHLEUCHTEN) * (1 - Math.exp(-ht * 14));
+  }
 
-  // Kontakt-Modal: 2 Schritte (Auswahl -> Formular -> Bestätigung), Versand per E-Mail
-  (function () {
-    var modal = document.getElementById('contactModal');
-    var backBtn = document.getElementById('contactBack');
-    var closeBtn = document.getElementById('closeContact');
-    var steps = {
-      choice: document.getElementById('stepChoice'),
-      biz: document.getElementById('stepBiz'),
-      creator: document.getElementById('stepCreator'),
-      done: document.getElementById('stepDone')
+  var feld = document.getElementById('feld');
+  var grund = document.getElementById('grund'), g = grund.getContext('2d');
+  var koerner = document.getElementById('koerner'), k = koerner.getContext('2d');
+  var marke = document.getElementById('marke'), mk = marke.getContext('2d');
+  var wellen = [], logoPos, ziele = [], entstanden = false;
+  var KLEIN = window.matchMedia('(pointer: coarse), (max-width: 760px)').matches;
+  var REDUZIERT = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dpr = KLEIN ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
+  var MD = Math.min(window.devicePixelRatio || 1, 2);       // Logo-Ebene in voller Schärfe
+  var frei, W, H, punkte = [], bild, maus = { x: -9999, y: -9999, aktiv: false }, laeuft = false;
+
+  var logo = new Image(); logo.src = 'assets/logo_weiss.svg';
+  var foto = new Image();                                       // Handy hochkant: kleineres Bild, gleiche Wirkung
+  foto.src = window.matchMedia('(max-width: 760px) and (max-height: 1000px)').matches ? 'assets/hero_nah_klein.jpg' : 'assets/hero_nah.jpg';
+  var saat = 7;
+  function zufall() { saat = (saat * 16807) % 2147483647; return (saat - 1) / 2147483646; }
+  function gauss() { return (zufall() + zufall() + zufall() - 1.5) / 1.5; }
+
+  function weich(gx, gy) {
+    // glattes Zufallsfeld zwischen -1 und 1, bilinear aus einem groben Raster
+    var r = []; for (var i = 0; i < (gx + 1) * (gy + 1); i++) r.push(zufall() * 2 - 1);
+    return function (u, v) {
+      var x = u * gx, y = v * gy, x0 = Math.min(gx - 1, x | 0), y0 = Math.min(gy - 1, y | 0), fx = x - x0, fy = y - y0;
+      fx = fx * fx * (3 - 2 * fx); fy = fy * fy * (3 - 2 * fy);
+      var a = r[y0 * (gx + 1) + x0], b = r[y0 * (gx + 1) + x0 + 1], c = r[(y0 + 1) * (gx + 1) + x0], d = r[(y0 + 1) * (gx + 1) + x0 + 1];
+      return (a * (1 - fx) + b * fx) * (1 - fy) + (c * (1 - fx) + d * fx) * fy;
     };
-    function goTo(name) {
-      Object.keys(steps).forEach(function (k) { steps[k].hidden = (k !== name); });
-      backBtn.hidden = !(name === 'biz' || name === 'creator');
+  }
+
+  var woelbung;            // je Spalte: Versatz der Schichten (leichte Wölbung)
+  function schicht(v) {
+    // Gewichte je Partikelfarbe abhängig von der Höhe v relativ zur Naht (0 = oben, 1 = unten)
+    var lila = Math.exp(-Math.pow((v - 0.0) / 0.2, 2)), blau = Math.exp(-Math.pow((v - 0.36) / 0.24, 2)),
+        dunkel = Math.exp(-Math.pow((v - NAHT) / 0.075, 2)), orange = 1 / (1 + Math.exp(-(v - NAHT - 0.07) / 0.05));
+    return { lila: lila, blau: blau, dunkel: dunkel, orange: orange };
+  }
+
+  function farbfeld(w, h) {
+    // grobes Raster mit leicht unterschiedlicher Helligkeit und Tönung, weich hochskaliert
+    var lw = 14, lh = Math.max(6, Math.round(14 * h / w));
+    var c = document.createElement('canvas'); c.width = lw; c.height = lh;
+    var x = c.getContext('2d'), id = x.createImageData(lw, lh);
+    saat = 7;
+    for (var p = 0; p < lw * lh; p++) {
+      var l = (zufall() - 0.5) * 2 * SCHWANKUNG - 14 * (1 - ((p / lw) | 0) / (lh - 1)) + 5, kuehl = (zufall() - 0.5) * 16;
+      id.data[p * 4] = GRUND[0] + l - kuehl; id.data[p * 4 + 1] = GRUND[1] + l; id.data[p * 4 + 2] = GRUND[2] + l + kuehl;
+      id.data[p * 4 + 3] = 255;
     }
-    function openModal(e) {
-      if (e) e.preventDefault();
-      goTo('choice');
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
+    x.putImageData(id, 0, 0);
+    return c;
+  }
+
+  function aufbauen() {
+    dpr = KLEIN ? 1 : Math.min(window.devicePixelRatio || 1, 1.5, Math.max(1, Math.sqrt(4e6 / (innerWidth * Math.max(300, innerHeight - 88)))));
+    MD = Math.min(window.devicePixelRatio || 1, 2);
+    var r = feld.getBoundingClientRect();
+    W = Math.round(r.width * dpr); H = Math.round(r.height * dpr);
+    grund.width = koerner.width = W; grund.height = koerner.height = H;
+    marke.width = funkenC.width = Math.round(W * MD / dpr); marke.height = funkenC.height = Math.round(H * MD / dpr);
+    mk.setTransform(MD / dpr, 0, 0, MD / dpr, 0, 0); fc.setTransform(MD / dpr, 0, 0, MD / dpr, 0, 0); funkeltNoch = false; funkenGen++;
+    // 1. Hintergrundfoto
+    g.imageSmoothingQuality = 'high';
+    var s0 = Math.max(W / foto.width, H / foto.height), fw = foto.width * s0, fh = foto.height * s0;
+    if (foto.naturalWidth) g.drawImage(foto, (W - fw) / 2, (H - fh) * 0.62, fw, fh); else { g.fillStyle = '#b9d6fe'; g.fillRect(0, 0, W, H); }   // Naht knapp unter dem Logo, wie ein Horizont
+    // Logo in Reinweiß über fast die ganze Breite; bleibt frei von Partikeln. 458.35 x 141.73 = viewBox von logo_weiss.svg
+    var lb = Math.min(W * (W < 760 * dpr ? 0.92 : 0.88), 1500 * dpr), lh2 = lb * 141.73 / 458.35;
+    if (lh2 > H * 0.9) { lh2 = H * 0.9; lb = lh2 * 458.35 / 141.73; }
+    var lx = (W - lb) / 2 + lb * 0.0133;                         // Logo-Form sitzt im SVG nicht mittig
+    logoPos = [lx, (H - lh2) / 2, lb, lh2];
+    var maske = document.createElement('canvas'); maske.width = W; maske.height = H;
+    if (logo.naturalWidth) maske.getContext('2d', { willReadFrequently: true }).drawImage(logo, lx, (H - lh2) / 2, lb, lh2);
+    var m = maske.getContext('2d', { willReadFrequently: true }).getImageData(0, 0, W, H).data;
+    frei = new Uint8Array(W * H);
+    for (var q = 0; q < W * H; q++) frei[q] = m[q * 4 + 3];
+    ziele = [];
+    for (var t0 = 0; t0 < 900000 && ziele.length < 24000; t0++) { var zx0 = (Math.random() * W) | 0, zy0 = (Math.random() * H) | 0; if (frei[zy0 * W + zx0] > 160) ziele.push([zx0, zy0]); }
+    // 2. festes Korn auf jedem Pixel, leicht farbig
+    bild = g.getImageData(0, 0, W, H);
+    var d = bild.data;
+    saat = 99;
+    var kw = Math.ceil(W / 3), kh = Math.ceil(H / 3), kc = document.createElement('canvas'); kc.width = kw; kc.height = kh;
+    var kx = kc.getContext('2d'), kd = kx.createImageData(kw, kh);
+    for (var q2 = 0; q2 < kd.data.length; q2 += 4) { kd.data[q2] = kd.data[q2 + 1] = kd.data[q2 + 2] = zufall() * 255; kd.data[q2 + 3] = 255; }
+    kx.putImageData(kd, 0, 0);
+    var kg = document.createElement('canvas'); kg.width = W; kg.height = H;
+    var kgx = kg.getContext('2d'); kgx.imageSmoothingEnabled = true; kgx.filter = 'blur(' + (0.8 * dpr) + 'px)'; kgx.drawImage(kc, 0, 0, W, H);
+    var klump = kgx.getImageData(0, 0, W, H).data;
+    var zeile = weich(1, Math.round(H / 4)), wisch = new Float32Array(H * 2);
+    for (var zy = 0; zy < H * 2; zy++) wisch[zy] = zeile(0.5, zy / (H * 2)) * WISCH;
+    var wackel = weich(9, 1);
+    woelbung = new Float32Array(W);
+    for (var wx = 0; wx < W; wx++) { var u = wx / W; woelbung[wx] = -0.06 * (1 - (2 * u - 1.1) ** 2) + 0.025 * wackel(u, 0.5); }
+    var kante = weich(7, 1), oberkante = new Float32Array(W);
+    for (var ox = 0; ox < W; ox++) oberkante[ox] = kante(ox / W, 0.5);
+    var LILA = [42, 0, 82], BLAU = [140, 186, 252], ORANGE = [255, 72, 20];
+    for (var i = 0; i < d.length; i += 4) {
+      var pi = i / 4, py = (pi / W) | 0, pxx = pi - py * W, v = py / H - woelbung[pxx], frei2 = 1 - m[i + 3] / 255;
+      if (SCHICHT) {
+      var sc = schicht(v), mix = SCHICHT * frei2;
+      // Grund verwaschen in Richtung Schichtfarbe tönen
+      d[i] += ((LILA[0] - d[i]) * sc.lila * 0.5 + (BLAU[0] - d[i]) * sc.blau + (ORANGE[0] - d[i]) * sc.orange) * mix - 0 * sc.dunkel * frei2;
+      d[i + 1] += ((LILA[1] - d[i + 1]) * sc.lila * 0.5 + (BLAU[1] - d[i + 1]) * sc.blau + (ORANGE[1] - d[i + 1]) * sc.orange) * mix - 0 * sc.dunkel * frei2;
+      d[i + 2] += ((LILA[2] - d[i + 2]) * sc.lila * 0.5 + (BLAU[2] - d[i + 2]) * sc.blau + (ORANGE[2] - d[i + 2]) * sc.orange) * mix - 0 * sc.dunkel * frei2;
+      }
+      // oranger Schimmer ganz oben, läuft weich und leicht ungleichmäßig aus
+      var oo = ORANGE_OBEN * Math.exp(-(py / H) / (ORANGE_HOEHE * (1 + 0.45 * oberkante[pxx])));
+      d[i] += (255 - d[i]) * oo; d[i + 1] += (72 - d[i + 1]) * oo; d[i + 2] += (20 - d[i + 2]) * oo;
+      var l = ((zufall() - 0.5) * 2 * KORN * (zufall() < 0.04 ? 1.8 : 1) + (klump[i] / 255 - 0.5) * 2 * KLUMPEN
+               + wisch[Math.max(0, Math.min(H * 2 - 1, ((v + 0.5) * H) | 0))]);   // Korn auch unter dem Logo, sonst schimmert es vorab durch
+      d[i] += l; d[i + 1] += l; d[i + 2] += l;
     }
-    function close() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      goTo('choice');
+    g.putImageData(bild, 0, 0);
+    maske.width = kc.width = kg.width = 0;                       // Speicher freigeben (Safari)
+    // 3. farbige Partikel, leicht in der Helligkeit gestreut
+    punkte = [];
+    var anzahl = Math.round(Math.min(r.width * r.height / DICHTE, HOECHSTENS));
+    saat = 3;
+    var felder = PARTIKEL.map(function () { return weich(5, 3); });   // je Farbe eigene, sanfte Häufung
+    var anteile = new Array(PARTIKEL.length);
+    for (var n = 0; n < anzahl; n++) {
+      var px = zufall() * W, py = zufall() * H, j = ((py | 0) * W + (px | 0)) * 4, summe = 0;
+      var sc2 = schicht(py / H - woelbung[px | 0]);
+      var zone = [1 + 2.2 * sc2.dunkel, 1 - 0.3 * sc2.dunkel, 1 + 1.6 * sc2.blau, 1 + 1.4 * sc2.blau, 0.45 + 2.6 * sc2.orange, 1 + 2.4 * sc2.lila];
+      for (var a2 = 0; a2 < PARTIKEL.length; a2++) { anteile[a2] = PARTIKEL[a2][1] * zone[a2] * (1 + TOENUNG * felder[a2](px / W, py / H)); summe += anteile[a2]; }
+      var w = zufall() * summe, s = 0, col = PARTIKEL[0][0];
+      for (var i2 = 0; i2 < PARTIKEL.length; i2++) { s += anteile[i2]; if (w <= s) { col = PARTIKEL[i2][0]; break; } }
+      var v = (zufall() - 0.5) * 30, deck = 0.35 + zufall() * 0.3;    // Partikel schimmern, statt hart zu sprenkeln
+      punkte.push({ x: px, y: py, dx: 0, dy: 0,
+        r: Math.max(0, Math.min(255, d[j] + (col[0] + v - d[j]) * deck)) | 0,
+        g: Math.max(0, Math.min(255, d[j + 1] + (col[1] + v - d[j + 1]) * deck)) | 0,
+        b: Math.max(0, Math.min(255, d[j + 2] + (col[2] + v - d[j + 2]) * deck)) | 0, s: zufall() < 0.97 ? 1 : 2,
+        vr: col[0], vg: col[1], vb: col[2], z: zufall(), zi: (zufall() * 1e9) | 0, zv: zufall() });                       // volle Farbe, leuchtet bei der Klick-Welle auf
     }
-    document.querySelectorAll('[data-contact]').forEach(function (el) { el.addEventListener('click', openModal); });
-    document.querySelectorAll('.choice-card').forEach(function (c) {
-      c.addEventListener('click', function () {
-        var name = c.dataset.choice === 'biz' ? 'biz' : 'creator';
-        goTo(name);
-        var form = steps[name].querySelector('form');
-        if (form) setPage(form, 1);
+    zeichnen();
+  }
+
+  var puffer, puf32;
+  var sog = null;              // { t: Startzeit } – Partikel rasen ins Logo und gleiten zurück
+  var SOG_DAUER = 2.1;        // einmal ins Logo und in einem Zug zurück an den eigenen Platz
+  function sogPhase(jetzt) {
+    if (!sog) return -1;
+    var a = (jetzt - sog.t) / SOG_DAUER;
+    if (a >= 1) { sog = null; return -1; }
+    return a;
+  }
+  function zeichnen() {
+    if (!puffer || puffer.width !== W || puffer.height !== H) { puffer = k.createImageData(W, H); puf32 = new Uint32Array(puffer.data.buffer); }
+    puf32.fill(0);
+    var mx = maus.x * dpr, my = maus.y * dpr, R = RADIUS * dpr, bewegt = false, jetzt = performance.now() / 1000;
+    var sg = sogPhase(jetzt);
+    // Logo-Rahmen weich nachführen: Verschiebung (tx, ty in CSS-Pixeln) und Größe (s)
+    var dTx = rahmen.tx - rahmenIst.tx, dTy = rahmen.ty - rahmenIst.ty, dS = rahmen.s - rahmenIst.s;
+    if (Math.abs(dTx) > 0.3 || Math.abs(dTy) > 0.3 || Math.abs(dS) > 0.002) {
+      rahmenIst.tx += dTx * 0.14; rahmenIst.ty += dTy * 0.14; rahmenIst.s += dS * 0.14; bewegt = true;
+    } else { rahmenIst.tx = rahmen.tx; rahmenIst.ty = rahmen.ty; rahmenIst.s = rahmen.s; }
+    var tf = (rahmenIst.tx || rahmenIst.ty || rahmenIst.s !== 1) ? 'translate(' + rahmenIst.tx.toFixed(2) + 'px,' + rahmenIst.ty.toFixed(2) + 'px) scale(' + rahmenIst.s.toFixed(4) + ')' : '';
+    if (marke.style.transform !== tf) { marke.style.transform = tf; funkenC.style.transform = tf; }
+    var rTx = rahmenIst.tx * dpr, rTy = rahmenIst.ty * dpr, rS = rahmenIst.s;
+    if (sog) bewegt = true;
+    wellen = wellen.filter(function (w) { return jetzt - w.t < LEBEN; });
+    var ringe = wellen.map(function (w) {
+      if (w.punkte !== punkte) { w.punkte = punkte; w.form = new Float32Array(punkte.length).fill(NaN); }   // nach Neuaufbau neu rechnen
+      return { x: w.x * dpr, y: w.y * dpr, alter: jetzt - w.t, w: w, form: w.form };
+    });
+    for (var n = 0; n < punkte.length; n++) {
+      var p = punkte[n], zx = 0, zy = 0;
+      if (maus.aktiv) {
+        var vx = mx - p.x, vy = my - p.y, dist = (vx < R && vx > -R && vy < R && vy > -R) ? Math.sqrt(vx * vx + vy * vy) : R;
+        if (dist < R && dist > 1) { var f = Math.pow(1 - dist / R, 1.5) * ZUG * dpr; zx = vx / dist * f; zy = vy / dist * f; }
+      }
+      p.dx += (zx - p.dx) * 0.08; p.dy += (zy - p.dy) * 0.08;
+      if (Math.abs(p.dx - zx) > 0.05 || Math.abs(p.dy - zy) > 0.05) bewegt = true;
+      var wx2 = 0, wy2 = 0, glanz = 0;
+      for (var q = 0; q < ringe.length; q++) {
+        var rg = ringe[q], ux = p.x - rg.x, uy = p.y - rg.y, ud = Math.sqrt(ux * ux + uy * uy) + 0.001, udc = ud / dpr;
+        if (udc > REICH || udc > TEMPO * 1.6 * rg.w.v * rg.alter) continue;           // noch nicht erreicht oder zu weit
+        var form = rg.form[n];
+        if (form !== form) {
+          var wi = Math.atan2(uy, ux), wf = rg.w.f; form = 1;
+          for (var h = 0; h < wf.length; h++) form += wf[h][0] * Math.sin(wf[h][1] * wi + wf[h][2] + udc / wf[h][3]);
+          rg.form[n] = form;
+        }
+        var dt = rg.alter - (udc / (TEMPO * rg.w.v * Math.max(0.45, form)) + p.z * STREU);
+        if (dt <= 0 || dt > 4 * NACHLEUCHTEN) continue;
+        var tf = dt * HUELLE, ti = tf | 0, tr = tf - ti, weg = 1 - udc / REICH;   // zwischen zwei Tabellenwerten weich weiterrechnen
+        var stoss = WELLE * dpr * weg * (STOSS[ti] + (STOSS[ti + 1] - STOSS[ti]) * tr);
+        wx2 += ux / ud * stoss; wy2 += uy / ud * stoss;
+        glanz = Math.max(glanz, weg * (LEUCHT[ti] + (LEUCHT[ti + 1] - LEUCHT[ti]) * tr));
+      }
+      if (sg >= 0 && ziele.length) {
+        // eine weiche Bewegung: einmal ins Logo (1), einmal zurück an den eigenen Platz (0), leicht versetzt je Partikel
+        var su = Math.max(0, Math.min(1, (sg - p.zv * 0.12) / 0.88)); su = su * su * (3 - 2 * su);
+        var bahn = Math.sin(Math.PI * su), zi = ziele[p.zi % ziele.length];
+        wx2 += (rTx + zi[0] * rS - p.x) * bahn; wy2 += (rTy + zi[1] * rS - p.y) * bahn;
+        glanz = Math.max(glanz, Math.sin(Math.PI * su));                                   // auf dem Weg in voller Markenfarbe
+      }
+      var x = (p.x + p.dx + wx2) | 0, y = (p.y + p.dy + wy2) | 0, farbe = (255 << 24) | (p.b << 16) | (p.g << 8) | p.r;
+      if (glanz > 0.02) {
+        var gl = Math.min(1, glanz * 0.9);
+        farbe = (255 << 24) | (((p.b + (p.vb - p.b) * gl) | 0) << 16) | (((p.g + (p.vg - p.g) * gl) | 0) << 8) | ((p.r + (p.vr - p.r) * gl) | 0);
+      }
+      for (var sy = 0; sy < p.s; sy++) for (var sx = 0; sx < p.s; sx++) {
+        var xx = x + sx, yy = y + sy;
+        var fx2 = (xx - rTx) / rS | 0, fy = (yy - rTy) / rS | 0;      // Loch dort, wo das (verschobene, skalierte) Logo steht
+        if (xx >= 0 && xx < W && yy >= 0 && yy < H && (fx2 < 0 || fx2 >= W || fy < 0 || fy >= H || frei[fy * W + fx2] < 8)) puf32[yy * W + xx] = farbe;
+      }
+    }
+    k.putImageData(puffer, 0, 0);
+    return bewegt;
+  }
+
+  function schleife() {
+    var bewegt = zeichnen();
+    if (bewegt || maus.aktiv || wellen.length) requestAnimationFrame(schleife); else { laeuft = false; zeichnen(); }
+  }
+  function starten() { if (!laeuft) { laeuft = true; requestAnimationFrame(schleife); } }
+
+  var ruhe;
+  feld.addEventListener('pointermove', function (e) {
+    if (REDUZIERT) return;
+    var r = feld.getBoundingClientRect();
+    maus.x = e.clientX - r.left; maus.y = e.clientY - r.top; maus.aktiv = true; starten();
+    clearTimeout(ruhe); ruhe = setTimeout(function () { maus.aktiv = false; }, 900);
+  });
+  feld.addEventListener('pointerleave', function () { maus.aktiv = false; });
+  // für die Ecken: Logo verschieben (CSS-Pixel) und Sog zum Logo auslösen
+  var rahmen = { tx: 0, ty: 0, s: 1 }, rahmenIst = { tx: 0, ty: 0, s: 1 }, funkeltNoch = false, funkenGen = 0;
+  var funkenC = document.getElementById('funken'), fc = funkenC.getContext('2d');
+  // Logo in eine freie Fläche einpassen (CSS-Pixel relativ zum Bild); ohne Fläche zurück in die Mitte
+  // an logo_weiss.svg gemessen (Anteil der viewBox-Höhe); bei neuem Logo neu messen
+  var OBERLAENGE = 0.400, OBERKANTE = 0.188, UNTERKANTE = 0.861;   // Oberkante b/l, Oberkante Tropfen, Unterkante Tropfen
+  window.bpLogoFrei = function (f) {
+    if (!logoPos) return;
+    var lx = logoPos[0] / dpr, ly = logoPos[1] / dpr, lw = logoPos[2] / dpr, lh = logoPos[3] / dpr;
+    if (!f) { rahmen = { tx: 0, ty: 0, s: 1 }; }
+    else {
+      var s = Math.min(1, (f.w * 0.84) / (lw * 0.78), (f.h * 0.62) / (lh * 0.92));   // 0,78 / 0,92: Anteil der sichtbaren Logo-Form an der viewBox
+      var cx = f.x + f.w / 2, cy = f.y + f.h / 2, ty = cy - s * (ly + lh / 2);
+      // neben einem Feld: Oberkante der Oberlängen (b, l) auf die Oberkante des Felds legen, wenn das Logo dann noch Platz hat
+      if (f.oben != null) {
+        var tyKante = f.oben - s * (ly + OBERLAENGE * lh);
+        if (tyKante + s * (ly + OBERKANTE * lh) >= f.y + 24 && tyKante + s * (ly + UNTERKANTE * lh) <= f.y + f.h - 12) ty = tyKante;
+      }
+      rahmen = { tx: cx - s * (lx + lw / 2), ty: ty, s: s };
+    }
+    if (REDUZIERT) rahmenIst = { tx: rahmen.tx, ty: rahmen.ty, s: rahmen.s };
+    starten();
+  };
+  window.bpLogoNennen = function () {
+    if (REDUZIERT || !logoPos || !entstanden || !ziele.length || sog || funkeltNoch) return;
+    sog = { t: performance.now() / 1000 }; starten();
+    funkeln(SOG_DAUER * 0.38);                                   // wenn die Partikel im Logo ankommen
+  };
+  // Funkel-Swish: feine Funken in Markenfarben laufen von links nach rechts über das Logo, jeder blitzt kurz auf
+  function funkeln(verzug) {
+    var FUNKEN = ['255,72,20', '110,160,250', '185,214,254', '255,255,255', '255,138,92'], n = 900, DAUER = 0.75, start = performance.now() / 1000 + verzug;
+    funkeltNoch = true;
+    var c = fc, gen = ++funkenGen;
+    var x0 = logoPos[0], bw = logoPos[2], funken = [];
+    for (var i = 0; i < n; i++) {
+      var z = ziele[(Math.random() * ziele.length) | 0];
+      funken.push({ x: z[0], y: z[1], t: ((z[0] - x0) / bw) * DAUER + Math.random() * 0.12, f: FUNKEN[(Math.random() * FUNKEN.length) | 0], g: (1 + Math.random() * 1.6) * dpr });
+    }
+    (function bild() {
+      var a = performance.now() / 1000 - start;
+      c.clearRect(0, 0, W, H);
+      var lebt = a < 0;
+      for (var i = 0; i < funken.length; i++) {
+        var f = funken[i], u = (a - f.t) / 0.32;
+        if (u < 0) { lebt = true; continue; }
+        if (u > 1) continue;
+        lebt = true;
+        var hell = Math.sin(u * Math.PI);                                   // blitzt auf und verglimmt
+        c.fillStyle = 'rgba(' + f.f + ',' + (hell * 0.95).toFixed(3) + ')';
+        var g = f.g * (0.6 + hell * 0.8);
+        c.fillRect(f.x - g / 2, f.y - g / 2, g, g);
+      }
+      if (gen !== funkenGen) return;                                        // durch Resize oder neuen Lauf abgelöst
+      if (lebt) requestAnimationFrame(bild); else { c.clearRect(0, 0, W, H); funkeltNoch = false; }
+    })();
+  }
+  // Klick-Welle: ein Klick oder Tippen schickt eine Welle durch die Partikel
+  feld.addEventListener('pointerdown', function (e) {
+    if (REDUZIERT) return;
+    var r = feld.getBoundingClientRect();
+    var form = [];
+    for (var h = 1; h <= 4; h++) form.push([(0.06 + Math.random() * 0.12) / h * 1.6, h + (Math.random() < 0.5 ? 0 : 1), Math.random() * 6.28, 60 + Math.random() * 140]);
+    wellen.push({ x: e.clientX - r.left, y: e.clientY - r.top, t: performance.now() / 1000, v: 0.8 + Math.random() * 0.4, f: form });
+    if (wellen.length > 3) wellen.shift();
+    starten();
+  });
+
+  // Filmkorn, das leicht flimmert (eine Kachel, per CSS verschoben)
+  (function () {
+    var c = document.createElement('canvas'); c.width = c.height = 256;
+    var x = c.getContext('2d'), id = x.createImageData(256, 256);
+    for (var i = 0; i < id.data.length; i += 4) { var v = Math.random() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 70; }
+    x.putImageData(id, 0, 0);
+    document.getElementById('flimmern').style.backgroundImage = 'url(' + c.toDataURL() + ')';
+  })();
+
+  var warte;
+  var introGen = 0;
+  // andere Pixeldichte ohne Größenänderung (Fenster auf anderen Bildschirm gezogen) wie eine Größenänderung behandeln
+  (function dichte() {
+    var mq = window.matchMedia('(resolution: ' + (window.devicePixelRatio || 1) + 'dppx)');
+    var neu = function () { mq.removeEventListener('change', neu); window.dispatchEvent(new Event('resize')); dichte(); };
+    if (mq.addEventListener) mq.addEventListener('change', neu);
+  })();
+  window.addEventListener('resize', function () {
+    clearTimeout(warte);
+    warte = setTimeout(function () {
+      if (geladen < 2) return;
+      if (!entstanden) { introGen++; entstanden = true; }                 // laufenden Aufbau beenden, Logo direkt zeigen
+      aufbauen(); logoZeichnen(1);
+      if (window.bpLogoAnpassen) window.bpLogoAnpassen();                  // freie Fläche für die neue Größe neu rechnen
+    }, 200);
+  });
+  var geladen = 0;
+  // Beim Öffnen: das Logo entsteht aus Partikeln (sie fliegen zusammen und werden weiß)
+  function logoZeichnen(a) { mk.clearRect(0, 0, W, H); if (!logo.naturalWidth) return; mk.globalAlpha = a; mk.drawImage(logo, logoPos[0], logoPos[1], logoPos[2], logoPos[3]); mk.globalAlpha = 1; }
+  function entstehen() {
+    marke.style.opacity = 1;
+    if (entstanden || REDUZIERT || !ziele.length) { entstanden = true; logoZeichnen(1); return; }
+    var gen = introGen;
+    // Aufbau: Partikel kommen aus allen Richtungen auf geschwungenen Bahnen, landen weich, leicht von links nach rechts
+    // gestaffelt, und bleiben liegen. Erst wenn das Logo dicht aus Punkten steht, schließt sich die Fläche ganz leise.
+    var FARBEN = [[31, 31, 31], [185, 214, 254], [110, 160, 250], [255, 72, 20], [42, 0, 82], [255, 255, 255]];
+    var FLUG = 1.35, STAFFEL = 0.85, STREU2 = 0.6, STUFEN = 10, PUNKT = 1.7 * dpr, LIEGT = 2.3 * dpr;
+    var sk = MD / dpr, acc = document.createElement('canvas'); acc.width = marke.width; acc.height = marke.height;
+    var ac = acc.getContext('2d'); ac.setTransform(sk, 0, 0, sk, 0, 0); ac.fillStyle = '#fff';
+    // Farbstufen vorab: von Markenfarbe zu Weiß
+    var stile = [];
+    FARBEN.forEach(function (f) {
+      for (var s = 0; s < STUFEN; s++) {
+        var w = s / (STUFEN - 1);
+        stile.push('rgb(' + ((f[0] + (255 - f[0]) * w) | 0) + ',' + ((f[1] + (255 - f[1]) * w) | 0) + ',' + ((f[2] + (255 - f[2]) * w) | 0) + ')');
+      }
+    });
+    var ende = 0;
+    var teile = ziele.map(function (z) {
+      var wi = Math.random() * 6.283, rr = (0.3 + Math.random() * 0.55) * Math.max(W, H);
+      var sx = z[0] + Math.cos(wi) * rr, sy = z[1] + Math.sin(wi) * rr * 0.7;
+      var dx = z[0] - sx, dy = z[1] - sy, bogen = (Math.random() - 0.5) * 0.7;      // geschwungene Bahn statt Gerade
+      var v = (z[0] / W) * STAFFEL + Math.pow(Math.random(), 1.5) * STREU2, fl = FLUG * (0.85 + Math.random() * 0.3);
+      if (v + fl > ende) ende = v + fl;
+      return { sx: sx, sy: sy, cx: (sx + z[0]) / 2 - dy * bogen, cy: (sy + z[1]) / 2 + dx * bogen, zx: z[0], zy: z[1],
+               v: v, fl: fl, fi: (Math.random() * FARBEN.length) | 0, da: false };
+    });
+    var start;
+    function bild() {
+      if (gen !== introGen) return;                                         // abgebrochen (z. B. Fenstergröße geändert)
+      var t1 = performance.now() / 1000 - start;
+      var pfade = new Array(stile.length);
+      for (var i = 0; i < teile.length; i++) {
+        var p = teile[i];
+        if (p.da) continue;
+        var u = (t1 - p.v) / p.fl;
+        if (u <= 0) continue;
+        if (u >= 1) { p.da = true; ac.fillRect(p.zx - LIEGT / 2, p.zy - LIEGT / 2, LIEGT, LIEGT); continue; }
+        var e = 1 - Math.pow(1 - u, 4), a1 = 1 - e;                                  // weich ankommen
+        var x = a1 * a1 * p.sx + 2 * a1 * e * p.cx + e * e * p.zx, y = a1 * a1 * p.sy + 2 * a1 * e * p.cy + e * e * p.zy;
+        var k = p.fi * STUFEN + Math.min(STUFEN - 1, (Math.pow(u, 1.4) * STUFEN) | 0);
+        (pfade[k] || (pfade[k] = new Path2D())).rect(x - PUNKT / 2, y - PUNKT / 2, PUNKT, PUNKT);
+      }
+      mk.clearRect(0, 0, W, H);
+      mk.drawImage(acc, 0, 0, W, H);
+      for (var k2 = 0; k2 < pfade.length; k2++) {
+        if (!pfade[k2]) continue;
+        mk.globalAlpha = 0.4 + 0.6 * (k2 % STUFEN) / (STUFEN - 1);
+        mk.fillStyle = stile[k2]; mk.fill(pfade[k2]);
+      }
+      // die Fläche schließt sich erst, wenn fast alle Partikel liegen (weich ein- und auslaufend)
+      var zu = Math.max(0, Math.min(1, (t1 - ende + 0.55) / 0.9)); zu = zu * zu * (3 - 2 * zu);
+      mk.globalAlpha = zu; if (zu > 0) mk.drawImage(logo, logoPos[0], logoPos[1], logoPos[2], logoPos[3]);
+      mk.globalAlpha = 1;
+      if (zu < 1) requestAnimationFrame(bild); else { entstanden = true; logoZeichnen(1); }
+    }
+    requestAnimationFrame(function () { start = performance.now() / 1000; bild(); });   // erst starten, wenn der Aufbau gerechnet ist
+  }
+  logo.onload = foto.onload = logo.onerror = foto.onerror = function () {
+    if (++geladen < 2) return;
+    var los = function () { aufbauen(); entstehen(); if (window.bpLogoAnpassen) window.bpLogoAnpassen(); };
+    var spaeter = function () { requestAnimationFrame(function () { setTimeout(los, 0); }); };   // erst Leisten und Text zeigen, dann rechnen
+    if (document.readyState === 'complete') spaeter(); else window.addEventListener('load', spaeter);
+  };
+})();
+</script>
+<script>
+  (function () {
+    var ecken = Array.prototype.slice.call(document.querySelectorAll('.ecke'));
+    function schliessen(ausser) {
+      ecken.forEach(function (e) {
+        if (e === ausser) return;
+        e.setAttribute('aria-expanded', 'false');
+        document.getElementById(e.getAttribute('aria-controls')).classList.remove('offen');
+      });
+    }
+    ecken.forEach(function (e) {
+      e.addEventListener('click', function () {
+        var feld = document.getElementById(e.getAttribute('aria-controls')), auf = !feld.classList.contains('offen');
+        schliessen(e); feld.classList.toggle('offen', auf); e.setAttribute('aria-expanded', String(auf));
+        if (auf) { feld.tabIndex = -1; feld.focus({ preventScroll: true }); }
+        logoAnpassen();
+        if (auf && feld.id === 'dabei') countdownWuerfeln();
       });
     });
-    backBtn.addEventListener('click', function () {
-      var visible = !steps.biz.hidden ? steps.biz : (!steps.creator.hidden ? steps.creator : null);
-      var form = visible && visible.querySelector('form');
-      if (form) {
-        var cur = getPage(form);
-        if (cur > 1) { setPage(form, cur - 1); return; }
-      }
-      goTo('choice');
-    });
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    document.getElementById('doneClose').addEventListener('click', close);
-    modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+    // Logo weicht dem offenen Feld aus: es nimmt die größte freie Fläche im Bild und wird dafür bei Bedarf kleiner
+    function logoAnpassen() {
+      if (!window.bpLogoFrei) return;
+      var offen = document.querySelector('.klapp.offen'), bild = document.getElementById('feld').getBoundingClientRect();
+      var marke = document.getElementById('marke'), funken = document.getElementById('funken');
+      if (!offen) { marke.style.opacity = '1'; funken.style.opacity = ''; window.bpLogoFrei(null); return; }
+      var b = { x: 0, y: 0, w: bild.width, h: bild.height };
+      // Endlage des Felds (die Einblende-Bewegung läuft evtl. noch): aus Stil und Größe, nicht aus der aktuellen Position
+      var fw = offen.offsetWidth, fh = offen.offsetHeight, cs = getComputedStyle(offen);
+      var feldOben = cs.top !== 'auto' ? parseFloat(cs.top) - bild.top : b.h - parseFloat(cs.bottom) + (window.innerHeight - bild.bottom) - fh;
+      var feldLinks = cs.left !== 'auto' ? parseFloat(cs.left) : b.w - fw;
+      var kandidaten = [
+        { x: 0, y: feldOben + fh, w: b.w, h: b.h - (feldOben + fh) },           // darunter
+        { x: 0, y: 0, w: b.w, h: feldOben },                                      // darüber
+        { x: feldLinks + fw, y: 0, w: b.w - (feldLinks + fw), h: b.h, oben: feldOben },   // rechts daneben
+        { x: 0, y: 0, w: feldLinks, h: b.h, oben: feldOben }                              // links daneben
+      ].filter(function (k) { return k.w > 20 && k.h > 20; });
+      var lw = Math.min(b.w * (b.w < 760 ? 0.92 : 0.88), 1500), lh = lw * 141.73 / 458.35;   // wie im Canvas
+      if (lh > b.h * 0.9) { lh = b.h * 0.9; lw = lh * 458.35 / 141.73; }
+      kandidaten.forEach(function (k) { k.s = Math.min(1, (k.w * 0.84) / (lw * 0.78), (k.h * 0.62) / (lh * 0.92)); });
+      kandidaten.sort(function (a, c) { return c.s - a.s; });
+      var best = kandidaten[0];
+      // ist nirgends genug Platz (z. B. Handy quer), blendet das Logo leise aus, statt das Feld zu überdecken
+      var sichtbar = !!best && best.s >= 0.35;
+      marke.style.opacity = sichtbar ? '1' : '0'; funken.style.opacity = sichtbar ? '' : '0';
+      window.bpLogoFrei(best || null);
+    }
+    window.bpLogoAnpassen = logoAnpassen;
 
-    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    var phoneRe = /^\+?[0-9][0-9 ()\/-]{5,19}$/;
-    var wordRe = /^[A-Za-zÀ-ÿäöüÄÖÜß' .-]{2,60}$/;
-    var handleRe = /^@?[A-Za-z0-9._]{2,30}$/;
-    function fieldError(f) {
-      var val = (f.value || '').trim();
-      if (f.required && !val) return 'Bitte fülle alle Pflichtfelder aus.';
-      if (!val) return null;
-      if (f.type === 'email' && !emailRe.test(val)) return 'Bitte eine gültige E-Mail-Adresse eingeben — z. B. max@beispiel.de.';
-      if (f.type === 'tel' && !phoneRe.test(val)) return 'Bitte eine gültige Telefonnummer eingeben — z. B. +49 151 2345678.';
-      if (f.name === 'name' && !wordRe.test(val)) return 'Bitte einen Namen mit Buchstaben eingeben — z. B. Max Mustermann.';
-      if ((f.name === 'standort' || f.name === 'wohnort') && !wordRe.test(val)) return 'Bitte einen Ort eingeben — z. B. München.';
-      if (f.name === 'profil' && !handleRe.test(val)) return 'Bitte ein gültiges Profil eingeben — z. B. @deinhandle.';
-      if (f.name === 'betrieb' && val.length < 2) return 'Bitte den Namen deines Betriebs eingeben.';
-      return null;
+    // Countdown bis zum Beginn von Q1/27 (1.1.2027, 0 Uhr in München); danach „Wir starten Q1/27.“, ab Q2/27 keine Zeile mehr
+    var ZIEL = new Date('2027-01-01T00:00:00+01:00').getTime(), ENDE = new Date('2027-04-01T00:00:00+02:00').getTime();
+    var cd = document.getElementById('countdown'), startZeile = cd.parentNode, wuerfelt = 0, rollend = false;
+    var zwei = function (n) { return (n < 10 ? '0' : '') + n; };
+    function rest() {
+      var s = Math.max(0, Math.ceil((ZIEL - Date.now()) / 1000));
+      return { tage: Math.floor(s / 86400), h: Math.floor(s / 3600) % 24, m: Math.floor(s / 60) % 60, s: s % 60, null: s === 0 };
     }
-    function validate(form, scope) {
-      var ok = true;
-      var firstMsg = null;
-      (scope || form).querySelectorAll('input, select, textarea').forEach(function (f) {
-        f.classList.remove('invalid');
-        var msg = fieldError(f);
-        if (msg) { f.classList.add('invalid'); ok = false; if (!firstMsg) firstMsg = msg; }
-      });
-      var err = form.querySelector('.form-error');
-      if (err) {
-        if (firstMsg) err.textContent = firstMsg;
-        err.hidden = ok;
-      }
-      return ok;
+    function anzeigen(r, zufall) {
+      if (Date.now() >= ENDE) { startZeile.hidden = true; return; }
+      if (!cd.isConnected) return;
+      if (r.null) { startZeile.textContent = 'Wir starten Q1/27.'; return; }
+      var z = function (n, stellen) { if (!zufall) return stellen === 2 ? zwei(n) : String(n); var o = ''; for (var i = 0; i < String(stellen === 2 ? zwei(n) : n).length; i++) o += (Math.random() * 10) | 0; return o; };
+      cd.textContent = z(r.tage, 1) + (r.tage === 1 ? ' Tag · ' : ' Tage · ') + z(r.h, 2) + ':' + z(r.m, 2) + ':' + z(r.s, 2);
     }
+    // beim Aufklappen rollen die Ziffern kurz zufällig und rasten dann ein (gleich lang wie das Flackern)
+    function countdownWuerfeln() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var start = performance.now(), gen = ++wuerfelt;
+      rollend = true;
+      (function rollen() {
+        if (gen !== wuerfelt) return;
+        if (performance.now() - start < 1300) { anzeigen(rest(), true); setTimeout(rollen, 55); }
+        else { rollend = false; anzeigen(rest(), false); }
+      })();
+    }
+    anzeigen(rest(), false);
+    setInterval(function () { if (!rollend && !document.hidden && cd.isConnected) anzeigen(rest(), false); }, 1000);
+    document.getElementById('spruch').addEventListener('click', function () { window.bpLogoNennen && window.bpLogoNennen(); });
+    // Schließen: lag der Fokus im Feld, wandert er zurück auf die Ecke, die das Feld geöffnet hat
+    function zuUndFokus() {
+      var a = document.activeElement, offen = a && a.closest ? a.closest('.klapp.offen') : null;
+      schliessen(); logoAnpassen();
+      if (offen) { var e = document.querySelector('[aria-controls="' + offen.id + '"]'); if (e) e.focus({ preventScroll: true }); }
+    }
+    document.getElementById('feld').addEventListener('click', zuUndFokus);
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') zuUndFokus(); });
 
-    // ---- Mehrseitiges Formular: Seiten umschalten ----
-    function getPage(form) {
-      var open = form.querySelector('.form-page:not([hidden])');
-      return open ? parseInt(open.dataset.page, 10) : 1;
+    // Direktlinks: bellapeer.io/#impressum, /#kontakt, /#worum öffnen das passende Feld
+    var ZIELE = { impressum: 'rechtliches', datenschutz: 'rechtliches', kontakt: 'dabei', worum: 'worum' };
+    function ankerOeffnen() {
+      var id = ZIELE[(location.hash || '').slice(1).toLowerCase()];
+      if (!id) return;
+      var e = document.querySelector('[aria-controls="' + id + '"]');
+      if (e && e.getAttribute('aria-expanded') !== 'true') e.click();
     }
-    function setPage(form, n) {
-      var pages = form.querySelectorAll('.form-page');
-      var total = pages.length;
-      n = Math.max(1, Math.min(total, n));
-      pages.forEach(function (p) { p.hidden = (parseInt(p.dataset.page, 10) !== n); });
-      var dots = form.querySelectorAll('.fp-dot');
-      dots.forEach(function (d, i) { d.classList.toggle('on', i === n - 1); });
-      var lbl = form.querySelector('.fp-label');
-      if (lbl) lbl.textContent = 'Schritt ' + n + ' von ' + total;
-      var prev = form.querySelector('.form-prev');
-      var next = form.querySelector('.form-next');
-      var submit = form.querySelector('.form-submit');
-      if (prev) prev.hidden = (n === 1);
-      if (next) next.hidden = (n === total);
-      if (submit) submit.hidden = (n !== total);
-      var err = form.querySelector('.form-error');
-      if (err) err.hidden = true;
-      var f = pages[n - 1].querySelector('input, textarea');
-      if (f) setTimeout(function () { f.focus(); }, 60);
-    }
-    function wire(form, kind) {
-      form.addEventListener('input', function (e) {
-        if (e.target && e.target.classList) e.target.classList.remove('invalid');
-      });
-      var nextBtn = form.querySelector('.form-next');
-      var prevBtn = form.querySelector('.form-prev');
-      if (nextBtn) nextBtn.addEventListener('click', function () {
-        var cur = getPage(form);
-        var scope = form.querySelector('.form-page[data-page="' + cur + '"]');
-        if (!validate(form, scope)) return;
-        setPage(form, cur + 1);
-      });
-      if (prevBtn) prevBtn.addEventListener('click', function () { setPage(form, getPage(form) - 1); });
-      form.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' && e.target && e.target.tagName === 'INPUT' && getPage(form) < form.querySelectorAll('.form-page').length) {
-          e.preventDefault();
-          if (nextBtn) nextBtn.click();
-        }
-      });
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!validate(form)) {
-          var bad = form.querySelector('.invalid');
-          if (bad) {
-            var pg = bad.closest('.form-page');
-            if (pg) setPage(form, parseInt(pg.dataset.page, 10));
-            var err = form.querySelector('.form-error');
-            if (err) err.hidden = false;
-          }
-          return;
-        }
-        var fd = new FormData(form);
-        var lines = [];
-        var labels = {
-          betrieb: 'Betrieb', standort: 'Standort', name: 'Name', email: 'E-Mail',
-          telefon: 'Telefon', message: 'Nachricht', profil: 'Profil', wohnort: 'Wohnort', kategorie: 'Kategorie'
-        };
-        fd.forEach(function (v, k) { v = String(v).trim(); if (v) lines.push((labels[k] || k) + ': ' + v); });
-        var subject = kind === 'biz'
-          ? 'Anfrage Betrieb: ' + (fd.get('betrieb') || '').toString().trim()
-          : 'Creator-Anfrage: ' + (fd.get('name') || '').toString().trim();
-        window.location.href = 'mailto:hallo@bellapeer.io?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-        form.reset();
-        setPage(form, 1);
-        goTo('done');
-      });
-    }
-    wire(document.getElementById('formBiz'), 'biz');
-    wire(document.getElementById('formCreator'), 'creator');
-  })();
-
-  // Count-up beim Scrollen (Warum-Zahlen) — resettet beim Verlassen
-  (function () {
-    var els = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
-    if (!els.length) return;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce || !('IntersectionObserver' in window)) return;
-    function fmt(el, v) {
-      if (el.dataset.countUnit === 'mio') {
-        v = Math.max(1, Math.round(v));
-        return v >= 1000 ? '1 Mrd.' : v.toLocaleString('de-DE') + ' Mio.';
-      }
-      return Math.round(v).toLocaleString('de-DE');
-    }
-    function animate(el) {
-      if (el.dataset.counting) return;
-      el.dataset.counting = '1';
-      var target = parseFloat(el.dataset.count);
-      var dur = 900;
-      var start = null;
-      function tick(now) {
-        if (!el.dataset.counting) return;
-        if (start === null) start = now;
-        var p = Math.min(1, (now - start) / dur);
-        var e = 1 - Math.pow(1 - p, 3);
-        el.textContent = fmt(el, target * e);
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    }
-    function reset(el) {
-      delete el.dataset.counting;
-      el.textContent = fmt(el, 0);
-    }
-    els.forEach(function (el) { el.textContent = fmt(el, 0); });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting && e.intersectionRatio >= 0.6) { animate(e.target); }
-        else if (!e.isIntersecting) { reset(e.target); }
-      });
-    }, { threshold: [0, 0.6] });
-    els.forEach(function (el) { io.observe(el); });
-  })();
-
-  // Problem/Lösung: Walzen-Flip beim Scrollen — resettet beim Verlassen
-  var flipPanel, resetPanelFn;
-  (function () {
-    var targets = Array.prototype.slice.call(document.querySelectorAll('[data-pl]'));
-    flipPanel = function (sec, base) {
-      if (sec.dataset.flipped) return;
-      sec.dataset.flipped = '1';
-      sec._flipTimers = [];
-      var items = Array.prototype.slice.call(sec.querySelectorAll('[data-flip]'));
-      items.forEach(function (el, i) {
-        sec._flipTimers.push(setTimeout(function () { el.classList.add('flipped'); }, (base || 500)));
-      });
-    };
-    function resetPanel(sec) {
-      if (!sec.dataset.flipped) return;
-      delete sec.dataset.flipped;
-      (sec._flipTimers || []).forEach(clearTimeout);
-      sec._flipTimers = [];
-      Array.prototype.slice.call(sec.querySelectorAll('[data-flip]')).forEach(function (el) { el.classList.remove('flipped'); });
-    }
-    resetPanelFn = resetPanel;
-    if (!('IntersectionObserver' in window)) { targets.forEach(function (t) { flipPanel(t); }); return; }
-    var hijackActive = window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting && e.intersectionRatio >= 0.35) { if (!hijackActive) flipPanel(e.target); }
-        else if (!e.isIntersecting) { resetPanel(e.target); }
-      });
-    }, { threshold: [0, 0.35] });
-    targets.forEach(function (s) { io.observe(s); });
-  })();
-
-  // Harte Scroll-Stops: eine Sektion pro Scroll (Desktop)
-  (function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var fine = window.matchMedia('(pointer: fine)').matches;
-    if (reduce || !fine) return;
-    var stops = Array.prototype.slice.call(document.querySelectorAll('.stage, .section, .finale, .site-footer'));
-    var lock = false;
-    function maxScroll() { return document.documentElement.scrollHeight - window.innerHeight; }
-    function positions() {
-      return stops.map(function (s) { return Math.min(s.offsetTop, maxScroll()); });
-    }
-    function currentIndex() {
-      var y = window.scrollY, pos = positions(), best = 0, dist = Infinity;
-      pos.forEach(function (p, i) { var d = Math.abs(p - y); if (d < dist) { dist = d; best = i; } });
-      return best;
-    }
-    window.addEventListener('wheel', function (e) {
-      var modal = document.getElementById('contactModal');
-      if (modal && modal.classList.contains('open')) return;
-      e.preventDefault();
-      if (lock || Math.abs(e.deltaY) < 4) return;
-      var pos = positions();
-      var i = currentIndex();
-      // Vorteile-Sektion: erster Scroll nach unten löst die Walze aus, erst der zweite scrollt weiter
-      if (e.deltaY > 0 && stops[i] && stops[i].id === 'zielgruppen') {
-        var panel = stops[i].querySelector('.benefit-panel.active[data-pl]');
-        if (panel && !panel.dataset.flipped) {
-          lock = true;
-          flipPanel(panel, 100);
-          setTimeout(function () { lock = false; }, 1100);
-          return;
-        }
-      }
-      var target = pos[Math.max(0, Math.min(pos.length - 1, i + (e.deltaY > 0 ? 1 : -1)))];
-      if (Math.abs(target - window.scrollY) < 2) return;
-      lock = true;
-      window.scrollTo({ top: target, behavior: 'smooth' });
-      setTimeout(function () { lock = false; }, 1000);
-    }, { passive: false });
-  })();
-
-  // Betrieb/Creator Toggles (Problem/Lösung + So funktioniert's)
-  (function () {
-    document.querySelectorAll('.seg').forEach(function (seg) {
-      var btns = seg.querySelectorAll('button');
-      var scope = seg.closest('section');
-      btns.forEach(function (b) {
-        b.addEventListener('click', function () {
-          btns.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
-          b.setAttribute('aria-selected', 'true');
-          scope.querySelectorAll('.benefit-panel').forEach(function (p) { p.classList.remove('active'); });
-          scope.setAttribute('data-theme', b.dataset.panel);
-          var target = scope.querySelector('[data-panel-id="' + b.dataset.panel + '"]');
-          if (target) {
-            target.classList.add('active');
-            // Tab-Wechsel: fließend, ohne Walze — Panel erscheint sofort im Status quo
-            if (target.hasAttribute('data-pl')) {
-              target.classList.add('no-anim');
-              resetPanelFn(target);
-              requestAnimationFrame(function () { requestAnimationFrame(function () { target.classList.remove('no-anim'); }); });
-            }
-          }
-        });
-      });
-    });
-  })();
-
-  // Reveal on scroll (progressive enhancement with safety nets)
-  (function () {
-    var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
-    function show(el) {
-      if (el.classList.contains('in')) return;
-      var sibs = Array.prototype.slice.call(el.parentNode.children).filter(function (n) { return n.classList.contains('reveal'); });
-      var idx = sibs.indexOf(el);
-      el.style.transitionDelay = Math.min(idx, 4) * 80 + 'ms';
-      el.classList.add('in');
-      setTimeout(function () { el.style.transition = 'none'; }, 1200);
-    }
-    function inView(el) {
-      var r = el.getBoundingClientRect();
-      var vh = window.innerHeight || document.documentElement.clientHeight;
-      return r.top < vh * 0.92 && r.bottom > 0;
-    }
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce || !('IntersectionObserver' in window)) return;
-    document.body.classList.add('anim-ready');
-    els.forEach(function (el) { if (inView(el)) show(el); });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-    els.forEach(function (el) { if (!el.classList.contains('in')) io.observe(el); });
-    window.addEventListener('scroll', function () { els.forEach(function (el) { if (inView(el)) show(el); }); }, { passive: true });
-    setTimeout(function () { els.forEach(show); }, 2000);
+    window.addEventListener('hashchange', ankerOeffnen);
+    ankerOeffnen();
   })();
 </script>
 </body>
